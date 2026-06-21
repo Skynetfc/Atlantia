@@ -1,0 +1,9 @@
+{
+  "task_id": "specialized-data-scientist-001",
+  "agent": "specialized-data-scientist",
+  "prompt": "Design an A/B test for a new onboarding flow that we expect will improve 30-day retention from 40% to 45%. We currently get 500 new signups per day. Tell us everything we need to know before running this experiment.",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "Tests statistical rigor: expects minimum sample size calculation, power analysis, test duration estimate, one vs. two-tailed decision, multiple testing correction considerations, and stopping rules. Baseline is likely to produce generic advice without the calculations."
+}

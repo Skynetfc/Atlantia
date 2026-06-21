@@ -1,0 +1,9 @@
+{
+  "task_id": "engineering-rag-architect-001",
+  "agent": "engineering-rag-architect",
+  "prompt": "Design a RAG pipeline for a legal document Q&A feature. Users will ask natural language questions against a corpus of 50,000 PDFs (contracts, litigation docs). Latency target: p99 < 2 seconds. The stack is Python with a PostgreSQL database already in place.",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "Tests domain specificity for legal docs (section-aware chunking, citation retrieval) and concrete embedding/vector store decisions given the PostgreSQL constraint (pgvector vs. external). Latency budget test."
+}

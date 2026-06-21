@@ -1,0 +1,9 @@
+{
+  "task_id": "marketing-content-strategist-001",
+  "agent": "marketing-content-strategist",
+  "prompt": "Create a 3-month content calendar for a B2B SaaS company that sells HR software to mid-market companies (500-2000 employees). The company is launching a new performance review module in month 2. Budget for content production is $8k/month. Include channel strategy, content types, and cadence.",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "Tests whether the persona understands B2B content funnel stages, HR software buyer journey, and can create specific rather than generic content recommendations."
+}

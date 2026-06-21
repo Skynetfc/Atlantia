@@ -1,0 +1,98 @@
+name: Eval Harness
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Weekly, Monday 08:00 UTC (Audit Day)
+  pull_request:
+    branches: [main]
+    paths:
+      - '*/**.md'  # Any persona file change triggers eval for that agent
+
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: 'Specific agent slug to evaluate (optional)'
+        required: false
+      division:
+        description: 'Division to evaluate (optional)'
+        required: false
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    name: Run Atlantia eval harness
+    env:
+      RUFLO_API_KEY: ${{ secrets.RUFLO_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Ruflo (optional — eval degrades gracefully without it)
+        run: |
+          if [[ -n "$RUFLO_API_KEY" ]]; then
+            npm install -g ruflo@3.6.10 2>/dev/null || echo "WARNING: Ruflo install failed. Eval will run in scaffold mode."
+          else
+            echo "No RUFLO_API_KEY set. Eval runs in scaffold mode (structure validated, scores not computed)."
+          fi
+
+      - name: Make scripts executable
+        run: chmod +x atlas-core/eval/run-eval.sh scripts/*.sh bin/atlantia
+
+      - name: Run eval harness
+        run: |
+          ARGS=""
+          if [[ -n "${{ github.event.inputs.agent }}" ]]; then
+            ARGS="--agent ${{ github.event.inputs.agent }}"
+          fi
+          if [[ -n "${{ github.event.inputs.division }}" ]]; then
+            ARGS="$ARGS --division ${{ github.event.inputs.division }}"
+          fi
+          bash atlas-core/eval/run-eval.sh $ARGS
+
+      - name: Verify report has required sections (Article VII compliance)
+        run: |
+          latest=$(ls -t atlas-core/eval/runs/ | head -1)
+          report="atlas-core/eval/runs/$latest/report.md"
+          [[ -f "$report" ]] || { echo "FAIL: report.md not generated"; exit 1; }
+          grep -q "Flagged for Deprecation" "$report" || { echo "FAIL: Deprecation Auditor section missing from report (Article VII violation)"; exit 1; }
+          echo "PASS: Report generated with required sections"
+          cat "$report"
+
+      - name: Post PR comment with eval delta (if PR trigger)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const glob = require('glob');
+            const runs = fs.readdirSync('atlas-core/eval/runs').sort().reverse();
+            if (!runs.length) return;
+            const report = fs.readFileSync(`atlas-core/eval/runs/${runs[0]}/report.md`, 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 📊 Atlantia Eval Results\n\nRun: \`${runs[0]}\`\n\n${report.slice(0, 3000)}`
+            });
+
+  audit-day-report:
+    runs-on: ubuntu-latest
+    name: Publish Audit Day summary
+    needs: eval
+    if: github.event_name == 'schedule'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish Audit Day summary
+        run: |
+          echo "=== ATLANTIA AUDIT DAY ==="
+          echo "Date: $(date -u +%Y-%m-%d)"
+          chmod +x bin/atlantia
+          bash bin/atlantia census
+          bash bin/atlantia gsp --period weekly

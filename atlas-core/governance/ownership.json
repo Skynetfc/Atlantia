@@ -1,0 +1,22 @@
+{
+  "_note": "Division ownership map. Each state has at least one named domain reviewer. Distinct from global Judiciary Reviewers — prevents generalist reviewers approving domain content they can't evaluate.",
+  "states": {
+    "engineering": { "state_name": "Forge State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have software engineering background" },
+    "marketing": { "state_name": "Signal State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have marketing/growth background" },
+    "sales": { "state_name": "Exchange State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have B2B/B2C sales background" },
+    "finance": { "state_name": "Ledger State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have finance/accounting background. Regulated domain." },
+    "security": { "state_name": "Ledger State (Security)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have information security background" },
+    "design": { "state_name": "Atelier State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have design/UX background" },
+    "gis": { "state_name": "Cartography State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have GIS/spatial data background" },
+    "testing": { "state_name": "Proving State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have QA/testing background" },
+    "academic": { "state_name": "Archive State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have academic research background" },
+    "game-development": { "state_name": "Arcade State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have game development background" },
+    "product": { "state_name": "Compass State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have product management background" },
+    "project-management": { "state_name": "Logistics State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have project management background" },
+    "spatial-computing": { "state_name": "Frontier State", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have spatial computing/AR/VR background" },
+    "specialized": { "state_name": "The Federal District", "reviewers": ["YOUR_USERNAME"], "domain_note": "Cross-cutting — each PR evaluated per its specific domain" },
+    "paid-media": { "state_name": "Signal State (Paid Media)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have paid advertising background" },
+    "support": { "state_name": "Exchange State (Support)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have customer support background" },
+    "quality": { "state_name": "Judiciary (not a state)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Judiciary branch — seated in Atlantia Prime, not territorial" }
+  }
+}

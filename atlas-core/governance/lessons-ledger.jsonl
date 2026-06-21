@@ -1,0 +1,4 @@
+# Atlantia Lessons Ledger — append-only, one JSON object per line
+# Format: { "date", "project_id", "finding", "evidence", "proposed_change", "status", "implemented_version" }
+# Regulated-domain lessons are abstracted/anonymized before entry — never store original sensitive content.
+# This file is queried by the Navigator before planning a new swarm.

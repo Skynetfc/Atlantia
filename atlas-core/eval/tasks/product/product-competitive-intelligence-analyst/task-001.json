@@ -1,0 +1,9 @@
+{
+  "task_id": "product-competitive-intelligence-analyst-001",
+  "agent": "product-competitive-intelligence-analyst",
+  "prompt": "Create a competitive intelligence framework for a B2B HR software company competing against Workday, BambooHR, and Rippling in the mid-market (200-2000 employee) segment. Focus on feature gaps, pricing strategy differences, and go-to-market positioning.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Tests whether the persona separates verified from inferred information, uses the correct verification labels, and produces reusable framework rather than a one-time snapshot."
+}

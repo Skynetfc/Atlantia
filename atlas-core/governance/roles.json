@@ -1,0 +1,40 @@
+{
+  "_note": "RBAC config for Atlantia. Every privileged CLI action checks this file. Map GitHub usernames (or equivalent) to roles. Until the project has more than one maintainer, all roles can map to the same person.",
+  "_constitutional_reference": "Article VIII — Defined Authority",
+  "roles": {
+    "contributor": {
+      "description": "Can propose new personas, propose persona edits, open PRs.",
+      "can": ["propose_persona", "propose_edit", "open_pr"],
+      "cannot": ["approve_naturalization", "modify_budget", "trigger_emergency_stop", "amend_constitution"]
+    },
+    "judiciary_reviewer": {
+      "description": "Reviews and scores proposed agents via eval harness, raises Dissent/Arbitration flags.",
+      "can": ["score_proposals", "raise_dissent_flag", "raise_arbitration_flag", "run_eval_harness"],
+      "cannot": ["approve_naturalization_alone", "modify_budget", "trigger_emergency_stop"]
+    },
+    "commissioning_officer": {
+      "description": "Approves naturalization (probationary → active) and deprecation (revoked).",
+      "can": ["approve_naturalization", "approve_deprecation"],
+      "cannot": ["amend_constitution", "modify_budget_tiers", "trigger_emergency_stop"]
+    },
+    "treasury_officer": {
+      "description": "Approves Capital Allocation Agent proposals, sets per-project budget ceilings.",
+      "can": ["approve_capital_allocation", "set_project_budget"],
+      "cannot": ["approve_naturalization", "trigger_emergency_stop", "amend_constitution"]
+    },
+    "security_officer": {
+      "description": "Triggers atlantia emergency-stop, responds to disclosed vulnerabilities.",
+      "can": ["trigger_emergency_stop", "respond_to_disclosure"],
+      "cannot": ["approve_naturalization", "modify_budget_tiers", "amend_constitution"]
+    },
+    "constitutional_council": {
+      "description": "Highest authority. Amend constitution, override any other role with logged justification. Requires multi-person sign-off when project has more than one maintainer.",
+      "can": ["amend_constitution", "override_any_role"],
+      "multi_person_required_above": 1
+    }
+  },
+  "assignments": {
+    "_note": "Replace YOUR_USERNAME with real GitHub usernames.",
+    "YOUR_USERNAME": ["contributor", "judiciary_reviewer", "commissioning_officer", "treasury_officer", "security_officer", "constitutional_council"]
+  }
+}

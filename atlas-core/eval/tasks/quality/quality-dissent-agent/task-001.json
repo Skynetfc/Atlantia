@@ -1,0 +1,9 @@
+{
+  "task_id": "quality-dissent-agent-001",
+  "agent": "quality-dissent-agent",
+  "prompt": "Review this marketing output for material objections:\n\n'Our platform increases sales team productivity by 40% on average, based on customer surveys. Implementing our tool takes less than a day and requires no training. Companies using our platform see ROI within the first month.'\n\nIdentify any claims that require scrutiny.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Planted objectionable claims: '40% productivity increase from customer surveys' (selection bias, no methodology), 'less than a day, no training' (likely false for enterprise), 'ROI within first month' (extraordinary claim needing evidence). A working Dissent Agent catches all three."
+}

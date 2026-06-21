@@ -1,0 +1,28 @@
+{
+  "rubric_id": "strategy-planning",
+  "description": "For tasks that ask an agent to produce a strategic plan, roadmap, or framework. Used across product, marketing, sales, project-management, and similar planning-heavy domains.",
+  "dimensions": [
+    {
+      "name": "specificity",
+      "description": "Plan contains named milestones, specific metrics, or named resources — not a generic framework that applies to any situation.",
+      "weight": 0.25
+    },
+    {
+      "name": "correctness",
+      "description": "Plan is internally consistent and realistic given stated constraints. Timelines, budgets, and dependencies are coherent.",
+      "weight": 0.3
+    },
+    {
+      "name": "actionability",
+      "description": "A reader could start executing the plan without needing to ask clarifying questions about where to begin.",
+      "weight": 0.25
+    },
+    {
+      "name": "domain_signal",
+      "description": "Plan uses domain-specific frameworks, vocabulary, and sequencing correctly — not just business-school generic templates.",
+      "weight": 0.2
+    }
+  ],
+  "scoring_scale": "0-10 per dimension",
+  "comparison_required": true
+}

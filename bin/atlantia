@@ -1,0 +1,251 @@
+#!/usr/bin/env bash
+# atlantia — Atlantia CLI
+# Pure bash — no python3, node, or jq required.
+#
+# Commands:
+#   census              Show current nation state (agents, states, treasury)
+#   gsp [--period]      Gross Specialist Product report
+#   emergency-stop      Kill all active swarms and daemons
+#   improvement-report  Show rolling quality improvement trend
+#   build               Run build-atlas-core.sh to regenerate atlas-core/agents/
+#   preflight --plan    Run constitutional pre-flight check against a swarm plan
+#   help                Show this help
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+VERSION="1.0.0"
+EVAL_DIR="$ROOT_DIR/atlas-core/eval/runs"
+INCIDENTS="$ROOT_DIR/atlas-core/governance/incident-log.jsonl"
+LEDGER="$ROOT_DIR/atlas-core/governance/lessons-ledger.jsonl"
+BUDGET="$ROOT_DIR/atlas-core/governance/budget.json"
+
+cmd="${1:-help}"
+shift || true
+
+# ── helpers ───────────────────────────────────────────────────────────────────
+# Count agents by status using grep on source dirs
+count_agents_by_status() {
+  local status="${1:-active}"
+  find "$ROOT_DIR" -maxdepth 3 -name "*.md" \
+    -not -path "*/atlas-core/*" \
+    -not -path "*/.git/*" \
+    -not -path "*/templates/*" \
+    -not -path "*/docs/*" \
+    -not -path "*/archive/*" 2>/dev/null | \
+  xargs grep -l "^status: $status" 2>/dev/null | wc -l | tr -d ' '
+}
+
+count_source_personas() {
+  local total=0
+  for div in academic design engineering finance game-development gis \
+             marketing paid-media product project-management quality \
+             sales security spatial-computing specialized support testing; do
+    local dir="$ROOT_DIR/$div"
+    [[ -d "$dir" ]] || continue
+    local cnt
+    cnt=$(find "$dir" -maxdepth 2 -name "*.md" | wc -l | tr -d ' ')
+    total=$((total + cnt))
+  done
+  echo "$total"
+}
+
+count_states() {
+  local cnt=0
+  for div in academic design engineering finance game-development gis \
+             marketing paid-media product project-management quality \
+             sales security spatial-computing specialized support testing; do
+    [[ -d "$ROOT_DIR/$div" ]] && ((cnt++)) || true
+  done
+  echo "$cnt"
+}
+
+treasury_balance() {
+  if [[ -f "$BUDGET" ]]; then
+    local ceiling
+    ceiling=$(grep -o '"default_project_budget_credits":[^,}]*' "$BUDGET" | grep -o '[0-9]*' | head -1)
+    echo "${ceiling:-unknown} Credits (default ceiling)"
+  else
+    echo "Budget file not found"
+  fi
+}
+
+last_audit_day() {
+  if [[ -d "$EVAL_DIR" ]]; then
+    local latest
+    latest=$(ls -t "$EVAL_DIR" 2>/dev/null | head -1)
+    [[ -n "$latest" ]] && echo "$latest" || echo "No eval runs yet"
+  else
+    echo "No eval runs yet"
+  fi
+}
+
+# ── census ────────────────────────────────────────────────────────────────────
+cmd_census() {
+  local total_personas states judiciary_seats treasury audit
+  total_personas=$(count_source_personas)
+  states=$(count_states)
+  judiciary_seats=$(find "$ROOT_DIR/quality" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
+  treasury=$(treasury_balance)
+  audit=$(last_audit_day)
+
+  echo ""
+  echo "╔══════════════════════════════════════════════════════════╗"
+  echo "║         ATLANTIA — NATIONAL CENSUS                      ║"
+  echo "╠══════════════════════════════════════════════════════════╣"
+  printf "║  Total persona files:        %-28s║\n" "$total_personas"
+  printf "║  Divisions / States:         %-28s║\n" "$states"
+  printf "║  Judiciary seats:            %-28s║\n" "$judiciary_seats"
+  printf "║  Treasury:                   %-28s║\n" "$treasury"
+  printf "║  Last Audit Day:             %-28s║\n" "$audit"
+  echo "╠══════════════════════════════════════════════════════════╣"
+  echo "║  Run 'atlantia build' to generate atlas-core/agents/     ║"
+  echo "║  Run 'atlantia gsp' for quality data (requires Ruflo)   ║"
+  echo "╚══════════════════════════════════════════════════════════╝"
+  echo ""
+}
+
+# ── gsp ───────────────────────────────────────────────────────────────────────
+cmd_gsp() {
+  local period="weekly"
+  while [[ $# -gt 0 ]]; do
+    case "$1" in --period) period="$2"; shift 2 ;; *) shift ;; esac
+  done
+
+  local latest_run=""
+  if [[ -d "$EVAL_DIR" ]]; then
+    latest_run=$(ls -t "$EVAL_DIR" 2>/dev/null | head -1)
+  fi
+
+  local deliverables="0"
+  local avg_quality="N/A (requires Ruflo)"
+
+  if [[ -n "$latest_run" ]] && [[ -f "$EVAL_DIR/$latest_run/results.json" ]]; then
+    deliverables=$(grep -c '"task_id"' "$EVAL_DIR/$latest_run/results.json" 2>/dev/null || echo "0")
+  fi
+
+  echo ""
+  echo "╔══════════════════════════════════════════════════════════╗"
+  echo "║       ATLANTIA — GROSS SPECIALIST PRODUCT REPORT        ║"
+  printf "║  Period: %-48s║\n" "$period"
+  echo "╠══════════════════════════════════════════════════════════╣"
+  printf "║  Tasks recorded:             %-28s║\n" "$deliverables"
+  printf "║  Quality-weighted avg:       %-28s║\n" "$avg_quality"
+  printf "║  Last eval run:              %-28s║\n" "${latest_run:-None}"
+  echo "╠══════════════════════════════════════════════════════════╣"
+  echo "║  Install Ruflo + rerun eval for quality-weighted scores. ║"
+  echo "║  Task structure is validated in scaffold mode.          ║"
+  echo "╚══════════════════════════════════════════════════════════╝"
+  echo ""
+}
+
+# ── improvement-report ────────────────────────────────────────────────────────
+cmd_improvement_report() {
+  local since=""
+  while [[ $# -gt 0 ]]; do
+    case "$1" in --since) since="$2"; shift 2 ;; *) shift ;; esac
+  done
+
+  local ledger_count="0"
+  local approved="0"
+  local rejected="0"
+  local pending="0"
+
+  if [[ -f "$LEDGER" ]]; then
+    ledger_count=$(grep -c '"status"' "$LEDGER" 2>/dev/null || echo "0")
+    approved=$(grep -c '"status": "approved"' "$LEDGER" 2>/dev/null || echo "0")
+    rejected=$(grep -c '"status": "rejected"' "$LEDGER" 2>/dev/null || echo "0")
+    pending=$(grep -c '"status": "proposed"' "$LEDGER" 2>/dev/null || echo "0")
+  fi
+
+  echo ""
+  echo "╔══════════════════════════════════════════════════════════╗"
+  echo "║         ATLANTIA — IMPROVEMENT REPORT                   ║"
+  printf "║  Period: %-48s║\n" "${since:-all time}"
+  echo "╠══════════════════════════════════════════════════════════╣"
+  printf "║  Lessons Ledger entries:     %-28s║\n" "$ledger_count"
+  printf "║  Approved changes:           %-28s║\n" "$approved"
+  printf "║  Rejected proposals:         %-28s║\n" "$rejected"
+  printf "║  Pending review:             %-28s║\n" "$pending"
+  echo "╠══════════════════════════════════════════════════════════╣"
+  echo "║  Quality trend: see atlas-core/eval/runs/               ║"
+  echo "║  Improvement claims without eval data are not           ║"
+  echo "║  published (per prompt9.md Section 5).                  ║"
+  echo "╚══════════════════════════════════════════════════════════╝"
+  echo ""
+}
+
+# ── emergency-stop ────────────────────────────────────────────────────────────
+cmd_emergency_stop() {
+  bash "$ROOT_DIR/scripts/emergency-stop.sh" "$@"
+}
+
+# ── build ─────────────────────────────────────────────────────────────────────
+cmd_build() {
+  bash "$ROOT_DIR/scripts/build-atlas-core.sh" "$@"
+}
+
+# ── preflight ─────────────────────────────────────────────────────────────────
+cmd_preflight() {
+  bash "$ROOT_DIR/scripts/constitutional-preflight.sh" "$@"
+}
+
+# ── help ──────────────────────────────────────────────────────────────────────
+cmd_help() {
+  cat <<EOF
+
+Atlantia CLI v$VERSION
+$( count_source_personas 2>/dev/null || echo "232+" ) specialists. One runtime. Constitutional governance.
+
+Usage: atlantia <command> [options]
+
+Commands:
+  census                      Show current nation state
+  gsp [--period weekly|daily] Gross Specialist Product report
+  emergency-stop              Kill all swarms and daemons
+    [--reason "..."]
+    [--user <github-username>]
+  improvement-report          Rolling quality improvement trend
+    [--since YYYY-MM-DD]
+  build [--dry-run]           Regenerate atlas-core/agents/ from source personas
+    [--division <name>]
+    [--verbose]
+  preflight --plan <file>     Constitutional pre-flight check for a swarm plan
+  help                        Show this help
+  version                     Show version
+
+Without Ruflo (standalone):
+  All persona files in division directories are plain Markdown system prompts.
+  Use them in any tool that supports custom system prompts.
+  Install into a specific tool:  bash atlas-core/install.sh --tool claude-code
+
+With Ruflo installed:
+  ruflo agent spawn -t atlas-<division>-<slug>
+  ruflo swarm init --agent-pool atlas --topology hierarchical
+
+Attribution:
+  Swarm runtime, persistent memory, model routing: Ruflo (ruflo.dev — MIT)
+  Original persona library: agency-agents (MIT)
+  Governance, quality division, eval harness, CLI: Atlantia (MIT)
+
+EOF
+}
+
+# ── dispatch ──────────────────────────────────────────────────────────────────
+case "$cmd" in
+  census)             cmd_census "$@" ;;
+  gsp)                cmd_gsp "$@" ;;
+  emergency-stop)     cmd_emergency_stop "$@" ;;
+  improvement-report) cmd_improvement_report "$@" ;;
+  build)              cmd_build "$@" ;;
+  preflight)          cmd_preflight "$@" ;;
+  help|--help|-h)     cmd_help ;;
+  version|--version)  echo "atlantia $VERSION" ;;
+  *)
+    echo "Unknown command: $cmd" >&2
+    cmd_help
+    exit 1
+    ;;
+esac

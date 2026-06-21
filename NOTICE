@@ -1,0 +1,43 @@
+ATLANTIA — NOTICE FILE
+Third-Party Credits and Licenses
+
+This project (Atlantia) is built on the following open-source work. Please credit
+these projects when building on or distributing Atlantia.
+
+-------------------------------------------------------------------------------
+
+1. Ruflo (formerly Claude-Flow)
+   - Repository: https://github.com/ruvnet/ruflo
+   - Author: rUv (https://ruv.io)
+   - License: MIT
+   - Role in Atlantia: Runtime infrastructure. Ruflo provides swarm orchestration,
+     persistent memory (AgentDB/RuVector), 3-tier model routing, 314 MCP tools,
+     agent federation, and security boundary enforcement (ADR-144/145/146).
+     Atlantia runs ON TOP of Ruflo — it does not replace or replicate Ruflo's
+     runtime capabilities. Do not describe Ruflo's features as Atlantia's own.
+   - Pinned version used: ruflo@3.6.10
+
+2. agency-agents ("The Agency")
+   - Repository: https://github.com/msitarzewski/agency-agents
+   - Author: msitarzewski and contributors
+   - License: MIT
+   - Role in Atlantia: Source persona library. Atlantia's 232+ specialist agent
+     persona files are derived from and extend the agency-agents persona collection.
+     The conversion layer (atlas-core) and quality division are new Atlantia work.
+
+-------------------------------------------------------------------------------
+
+IMPORTANT — What Atlantia built vs. what it inherited:
+
+- Persona content (232+ specialists): originally from agency-agents (MIT), extended
+  by Atlantia contributors.
+- atlas-core conversion layer, quality division agents, eval harness, governance
+  scripts, atlantia CLI: original Atlantia work.
+- Swarm engine, persistent memory, model routing, MCP tools, federation: Ruflo (MIT).
+
+Do not claim Ruflo's runtime as Atlantia's own engineering in any fork, derivative
+work, or marketing material.
+
+-------------------------------------------------------------------------------
+
+For the full MIT license text, see LICENSE.

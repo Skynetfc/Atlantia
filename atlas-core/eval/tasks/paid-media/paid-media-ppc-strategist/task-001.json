@@ -1,0 +1,9 @@
+{
+  "task_id": "paid-media-ppc-strategist-001",
+  "agent": "paid-media-ppc-strategist",
+  "prompt": "We're spending $40k/month on Google Ads for a B2B SaaS product with a 90-day sales cycle. ROAS has dropped 30% over the last quarter. Diagnose the likely causes and propose a specific remediation plan.",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "High-traffic agent, first coverage task. Requires domain-specific Google Ads terminology (attribution windows, match types, quality scores, conversion paths) to score well on domain_signal."
+}

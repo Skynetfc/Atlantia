@@ -1,0 +1,29 @@
+{
+  "rubric_id": "diagnostic-recommendation",
+  "description": "For tasks that ask an agent to identify a problem and recommend a remediation plan. Used across paid-media, engineering, finance, and similar diagnosis-heavy domains.",
+  "dimensions": [
+    {
+      "name": "specificity",
+      "description": "Concrete numbers, named tactics, named tools — not generic advice. A specific recommendation names platforms, timeframes, or thresholds.",
+      "weight": 0.3
+    },
+    {
+      "name": "correctness",
+      "description": "Technically sound given the scenario, no fabricated claims, no recommendations that would be counterproductive in the described context.",
+      "weight": 0.3
+    },
+    {
+      "name": "actionability",
+      "description": "Could a practitioner execute this without further clarification? Each recommendation should be a concrete next step, not a direction.",
+      "weight": 0.2
+    },
+    {
+      "name": "domain_signal",
+      "description": "Uses real domain-specific framing, terminology, and reasoning correctly — not surface-level keyword insertion. The scorer should not be able to mistake this for a generic output.",
+      "weight": 0.2
+    }
+  ],
+  "scoring_scale": "0-10 per dimension",
+  "comparison_required": true,
+  "_note": "comparison_required: true means the harness MUST run baseline condition alongside persona condition. A rubric without this field is malformed."
+}

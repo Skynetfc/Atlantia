@@ -1,0 +1,9 @@
+{
+  "task_id": "engineering-backend-architect-001",
+  "agent": "engineering-backend-architect",
+  "prompt": "Design a multi-tenant PostgreSQL schema for a project management SaaS tool. Each tenant has projects, each project has tasks, each task has comments and attachments. The system must support 500+ tenants with up to 10,000 tasks per tenant. Include row-level security design and the indexing strategy.",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "Tests schema design depth: expects RLS with tenant_id on all tables, proper foreign key indexing, choice between schema-per-tenant vs shared schema with consideration of trade-offs."
+}

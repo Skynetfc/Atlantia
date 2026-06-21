@@ -1,0 +1,9 @@
+{
+  "task_id": "paid-media-ppc-strategist-003",
+  "agent": "paid-media-ppc-strategist",
+  "prompt": "Our Google Ads account shows an average Quality Score of 4/10 across our top 20 keywords. Click-through rate is 1.2% against an industry benchmark of 3.5% for our category. What specifically is driving the low Quality Score and what are the exact steps to improve it within 30 days?",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "Tests whether the persona correctly identifies the three Quality Score components (expected CTR, ad relevance, landing page experience) and provides specific remediation steps for each."
+}

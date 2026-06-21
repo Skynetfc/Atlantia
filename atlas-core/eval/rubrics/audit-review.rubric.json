@@ -1,0 +1,28 @@
+{
+  "rubric_id": "audit-review",
+  "description": "For tasks that ask an agent to review, audit, or assess an existing artifact — code, document, strategy, contract. Used across engineering (code review), quality, legal, and finance.",
+  "dimensions": [
+    {
+      "name": "specificity",
+      "description": "Issues identified are concrete and locatable — specific line, claim, clause, or pattern — not general observations.",
+      "weight": 0.3
+    },
+    {
+      "name": "correctness",
+      "description": "Identified issues are real issues, not false positives. Severity ratings are calibrated to actual risk.",
+      "weight": 0.3
+    },
+    {
+      "name": "actionability",
+      "description": "Each finding comes with a concrete remediation step, not just identification of the problem.",
+      "weight": 0.2
+    },
+    {
+      "name": "domain_signal",
+      "description": "Demonstrates understanding of domain-specific risk — e.g. a security review that knows which CVE classes are relevant, a contract review that identifies jurisdiction-specific issues.",
+      "weight": 0.2
+    }
+  ],
+  "scoring_scale": "0-10 per dimension",
+  "comparison_required": true
+}

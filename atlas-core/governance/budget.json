@@ -1,0 +1,14 @@
+{
+  "_note": "Source of truth for Atlantia swarm budget limits. Referenced by constitution.md Article IV and enforced by scripts/constitutional-preflight.sh.",
+  "default_project_budget_credits": 1000,
+  "tier_costs": {
+    "fast": 0.0002,
+    "standard": 0.003,
+    "max": 0.015
+  },
+  "hard_stop_on_overrun": true,
+  "require_human_override_above": 5000,
+  "daemon_ttl_minutes": 60,
+  "idle_shutdown_minutes": 15,
+  "_warning": "Do not set hard_stop_on_overrun to false. Ruflo has documented history of runaway daemons consuming quota (see README Known Limitations). Always set explicit TTLs."
+}

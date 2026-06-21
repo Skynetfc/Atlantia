@@ -1,0 +1,9 @@
+{
+  "task_id": "sales-negotiation-simulator-001",
+  "agent": "sales-negotiation-simulator",
+  "prompt": "War-game a SaaS contract renewal negotiation. The customer has been with us for 2 years at $80k/year. They want a 25% price reduction, citing a competitor quote. Start the simulation with the buyer's opening statement.",
+  "task_type": "content-creation",
+  "rubric": "content-creation.rubric.json",
+  "context_files": [],
+  "_note": "Tests whether the persona creates a realistic buyer persona with specific constraints, not a generic objection script. Baseline is likely to produce generic negotiation tips rather than actual simulation dialogue."
+}

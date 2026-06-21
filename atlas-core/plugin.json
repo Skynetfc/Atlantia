@@ -1,0 +1,34 @@
+{
+  "name": "atlas-core",
+  "version": "1.0.0",
+  "description": "Atlantia persona library — 232+ domain specialists running natively as Ruflo agent types.",
+  "author": "Atlantia",
+  "license": "MIT",
+  "entry": "install.sh",
+  "ruflo_min_version": "3.6.0",
+  "agent_prefix": "atlas-",
+  "agent_dir": "agents/",
+  "plugin_type": "agent-library",
+  "homepage": "https://github.com/YOUR_ORG/atlantia",
+  "install": {
+    "method": "marketplace",
+    "command": "/plugin marketplace add YOUR_ORG/atlantia"
+  },
+  "capabilities": {
+    "agent_spawn": true,
+    "swarm_pool": "atlas",
+    "memory_tier_enforcement": true,
+    "constitutional_preflight": true
+  },
+  "divisions": [
+    "academic", "design", "engineering", "finance", "game-development",
+    "gis", "marketing", "paid-media", "product", "project-management",
+    "quality", "sales", "security", "spatial-computing", "specialized",
+    "support", "testing"
+  ],
+  "optional_dependencies": {
+    "ruflo": ">=3.6.0"
+  },
+  "standalone": true,
+  "_note": "Ruflo is an optional dependency. All persona files remain usable as plain Markdown without Ruflo installed."
+}

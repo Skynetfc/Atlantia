@@ -1,0 +1,9 @@
+{
+  "task_id": "engineering-code-reviewer-001",
+  "agent": "engineering-code-reviewer",
+  "prompt": "Review this Python function for a production financial system:\n\n```python\ndef calculate_interest(principal, rate, years):\n    total = principal * (1 + rate) ** years\n    return total\n```\n\nIdentify all issues — correctness, safety, production-readiness — and provide specific fixes.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Deliberately simple code with non-obvious issues: no input validation, floating-point precision risks for financial calculations (should use Decimal), no handling of edge cases (negative rate, zero years), no type hints, no docstring. A good code reviewer catches all of these."
+}

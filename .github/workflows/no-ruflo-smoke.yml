@@ -1,0 +1,112 @@
+name: No-Ruflo Smoke Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly, Monday 06:00 UTC
+
+jobs:
+  no-ruflo-smoke:
+    runs-on: ubuntu-latest
+    name: Verify Atlantia works without Ruflo
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Confirm Ruflo is NOT installed
+        run: |
+          if command -v ruflo &>/dev/null; then
+            echo "FAIL: ruflo binary found in PATH — this test must run without Ruflo installed"
+            exit 1
+          fi
+          echo "PASS: ruflo not in PATH"
+
+      - name: Verify persona files are plain readable Markdown
+        run: |
+          fail=0
+          for div in academic design engineering finance game-development gis \
+                     marketing paid-media product project-management quality \
+                     sales security spatial-computing specialized support testing; do
+            [[ -d "$div" ]] || continue
+            count=$(find "$div" -name "*.md" | wc -l)
+            echo "Division $div: $count persona files"
+            if [[ "$count" -eq 0 ]]; then
+              echo "WARNING: $div has no .md files"
+            fi
+          done
+          echo "All persona divisions readable without Ruflo."
+
+      - name: Verify atlas-core plugin.json is valid JSON
+        run: |
+          python3 -m json.tool atlas-core/plugin.json > /dev/null
+          echo "PASS: atlas-core/plugin.json is valid JSON"
+
+      - name: Verify Ruflo is in optionalDependencies only
+        run: |
+          python3 - <<'PYEOF'
+          import json, sys
+          pkg = json.load(open('package.json'))
+          deps = pkg.get('dependencies', {})
+          opt_deps = pkg.get('optionalDependencies', {})
+          ruflo_in_deps = [k for k in deps if 'ruflo' in k.lower() or 'claude-flow' in k.lower()]
+          ruflo_in_opt = [k for k in opt_deps if 'ruflo' in k.lower() or 'claude-flow' in k.lower()]
+          if ruflo_in_deps:
+              print(f"FAIL: Ruflo packages in dependencies (must be optionalDependencies): {ruflo_in_deps}")
+              sys.exit(1)
+          if not ruflo_in_opt:
+              print("WARNING: No Ruflo packages in optionalDependencies — confirm this is intentional if Ruflo integration is active")
+          else:
+              print(f"PASS: Ruflo packages correctly in optionalDependencies: {ruflo_in_opt}")
+          PYEOF
+
+      - name: Verify constitution.md exists and has all 8 Articles
+        run: |
+          python3 - <<'PYEOF'
+          content = open('constitution.md').read()
+          missing = []
+          for i in range(1, 9):
+              if f'Article {["I","II","III","IV","V","VI","VII","VIII"][i-1]}' not in content:
+                  missing.append(f'Article {i}')
+          if missing:
+              print(f"FAIL: Missing articles: {missing}")
+              exit(1)
+          print("PASS: All 8 constitutional articles present")
+          PYEOF
+
+      - name: Verify atlantia CLI is executable
+        run: |
+          chmod +x bin/atlantia
+          bash bin/atlantia help > /dev/null
+          echo "PASS: atlantia CLI runs without errors"
+
+      - name: Verify templates/agent-template.md exists
+        run: |
+          [[ -f "templates/agent-template.md" ]] || { echo "FAIL: agent template missing"; exit 1; }
+          echo "PASS: agent template exists"
+
+      - name: Verify quality division agents are present
+        run: |
+          required=(
+            quality/dissent-agent.md
+            quality/hallucination-auditor.md
+            quality/provenance-auditor.md
+            quality/agent-evaluator.md
+            quality/deprecation-auditor.md
+            quality/arbitration-agent.md
+            quality/retrospective-agent.md
+          )
+          fail=0
+          for f in "${required[@]}"; do
+            if [[ ! -f "$f" ]]; then
+              echo "FAIL: Missing quality agent: $f"
+              ((fail++)) || true
+            fi
+          done
+          [[ $fail -eq 0 ]] && echo "PASS: All quality division agents present"
+          exit $fail
+
+      - name: Summary
+        run: echo "No-Ruflo smoke test PASSED. Atlantia persona library is usable without Ruflo installed."

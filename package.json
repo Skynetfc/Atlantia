@@ -1,0 +1,56 @@
+{
+  "name": "atlantia",
+  "version": "1.0.0",
+  "description": "232+ domain specialist agents running natively as Ruflo agent types, governed by the Atlantia Constitution.",
+  "main": "atlas-core/install.sh",
+  "bin": {
+    "atlantia": "./bin/atlantia"
+  },
+  "scripts": {
+    "build": "bash scripts/build-atlas-core.sh",
+    "build:dry-run": "bash scripts/build-atlas-core.sh --dry-run",
+    "preflight": "bash scripts/constitutional-preflight.sh",
+    "eval": "bash atlas-core/eval/run-eval.sh",
+    "eval:dry-run": "bash atlas-core/eval/run-eval.sh --dry-run",
+    "census": "bash bin/atlantia census",
+    "gsp": "bash bin/atlantia gsp",
+    "smoke-test": "bash scripts/no-ruflo-smoke.sh",
+    "postinstall": "chmod +x bin/atlantia scripts/*.sh atlas-core/eval/run-eval.sh 2>/dev/null || true"
+  },
+  "keywords": [
+    "ai-agents",
+    "multi-agent",
+    "ruflo",
+    "swarm",
+    "persona",
+    "domain-specialists",
+    "constitutional-ai",
+    "atlantia"
+  ],
+  "author": "Atlantia Contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/YOUR_ORG/atlantia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_ORG/atlantia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_ORG/atlantia/issues"
+  },
+  "files": [
+    "bin/",
+    "atlas-core/",
+    "templates/",
+    "scripts/",
+    "constitution.md",
+    "NOTICE",
+    "README.md"
+  ],
+  "optionalDependencies": {
+    "ruflo": ">=3.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "_note": "Ruflo is optional. All persona files remain usable as plain Markdown without Ruflo installed. See README Known Limitations."
+}

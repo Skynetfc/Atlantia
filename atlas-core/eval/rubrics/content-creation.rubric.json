@@ -1,0 +1,28 @@
+{
+  "rubric_id": "content-creation",
+  "description": "For tasks that ask an agent to produce original content — copy, articles, scripts, messaging. Used across marketing, sales, design, academic, and support.",
+  "dimensions": [
+    {
+      "name": "specificity",
+      "description": "Content is tailored to the stated audience, channel, and context — not generic content that would apply to any brand or situation.",
+      "weight": 0.25
+    },
+    {
+      "name": "correctness",
+      "description": "Claims are accurate, tone matches the stated brand voice, and no factual errors are present.",
+      "weight": 0.3
+    },
+    {
+      "name": "actionability",
+      "description": "Content is ready to use or requires only minor editing — not a draft that needs substantial rewriting.",
+      "weight": 0.2
+    },
+    {
+      "name": "domain_signal",
+      "description": "Writing demonstrates real domain knowledge — e.g. a B2B SaaS email uses appropriate conversion framing, an academic abstract follows the correct structural conventions.",
+      "weight": 0.25
+    }
+  ],
+  "scoring_scale": "0-10 per dimension",
+  "comparison_required": true
+}

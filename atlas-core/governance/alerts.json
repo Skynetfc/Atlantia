@@ -1,0 +1,16 @@
+{
+  "_note": "Alerting config. At least one webhook must be configured for emergency-stop and budget-overrun events to be actionable. Supports Slack, email, and generic webhooks.",
+  "slack_webhook_url": "",
+  "email_endpoint": "",
+  "generic_webhook_url": "",
+  "trigger_conditions": [
+    "emergency_stop",
+    "budget_preflight_blocked",
+    "dissent_agent_escalation",
+    "arbitration_agent_escalation",
+    "rbac_enforcement_failure",
+    "treaty_compliance_violation"
+  ],
+  "alert_payload_fields": ["event_type", "timestamp", "project_id", "agent_involved", "log_entry_link"],
+  "_warning": "Without at least one configured webhook, emergency-stop and budget overrun events only write to logs. Configure a webhook before running production swarms."
+}

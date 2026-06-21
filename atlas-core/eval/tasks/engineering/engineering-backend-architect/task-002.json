@@ -1,0 +1,9 @@
+{
+  "task_id": "engineering-backend-architect-002",
+  "agent": "engineering-backend-architect",
+  "prompt": "Our Node.js API is hitting 2000 concurrent requests per second during peak hours and response time is degrading from 80ms average to 800ms. The service uses PostgreSQL and Redis. Diagnose the likely bottlenecks and propose a specific remediation plan that doesn't require a full rewrite.",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "Performance diagnosis task. Expects specific checks: connection pool sizing, N+1 query detection, Redis cache hit rate, event loop blocking analysis — not generic 'add caching' advice."
+}

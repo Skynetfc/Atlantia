@@ -1,0 +1,9 @@
+{
+  "task_id": "quality-hallucination-auditor-001",
+  "agent": "quality-hallucination-auditor",
+  "prompt": "Audit this content for hallucinations:\n\n'According to Gartner's 2025 report, 78% of enterprise companies have adopted AI-powered CRM tools. Salesforce reported $47.8 billion in revenue for FY2025. The average enterprise sales cycle for CRM software is 14 months. HubSpot's AI features have reduced average sales cycle length by 35% for their customers.'\n\nProduce a claim-by-claim audit table.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Deliberately planted claims of varying verifiability. Hallucination Auditor should classify each: some may be verifiable from public sources, some are plausible but unverifiable without the cited report, some may be fabricated numbers."
+}

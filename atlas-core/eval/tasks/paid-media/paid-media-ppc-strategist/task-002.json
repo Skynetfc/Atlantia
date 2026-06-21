@@ -1,0 +1,9 @@
+{
+  "task_id": "paid-media-ppc-strategist-002",
+  "agent": "paid-media-ppc-strategist",
+  "prompt": "A client wants to launch a LinkedIn Ads campaign for an enterprise cybersecurity product. Target audience is CISOs at companies with 500+ employees. Budget is $15k/month. Design the campaign structure, targeting approach, and creative strategy.",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "LinkedIn Ads for enterprise — requires understanding of LinkedIn's audience targeting capabilities (seniority, company size, job function) and enterprise SaaS buying cycle."
+}

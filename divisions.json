@@ -1,0 +1,130 @@
+{
+  "_note": "Source of truth for the Atlantia division set. Extends agency-agents/divisions.json with nation metadata (state_name, branch). scripts/check-divisions.sh validates that this list matches directories on disk. Adding a division: create its directory, add an entry here, run check-divisions.sh. NOT every top-level directory is a division: atlas-core/, bin/, docs/, scripts/, templates/, archive/ are excluded.",
+  "divisions": {
+    "academic": {
+      "label": "Academic",
+      "state_name": "Archive State",
+      "branch": "executive",
+      "icon": "GraduationCap",
+      "color": "#8B5CF6"
+    },
+    "design": {
+      "label": "Design",
+      "state_name": "Atelier State",
+      "branch": "executive",
+      "icon": "PenTool",
+      "color": "#EC4899"
+    },
+    "engineering": {
+      "label": "Engineering",
+      "state_name": "Forge State",
+      "branch": "executive",
+      "icon": "Code",
+      "color": "#3B82F6"
+    },
+    "finance": {
+      "label": "Finance",
+      "state_name": "Ledger State",
+      "branch": "executive",
+      "memory_tier_default": "ephemeral",
+      "regulated": true,
+      "icon": "DollarSign",
+      "color": "#22C55E"
+    },
+    "game-development": {
+      "label": "Game Development",
+      "state_name": "Arcade State",
+      "branch": "executive",
+      "icon": "Gamepad2",
+      "color": "#A855F7"
+    },
+    "gis": {
+      "label": "GIS",
+      "state_name": "Cartography State",
+      "branch": "executive",
+      "icon": "Map",
+      "color": "#14B8A6"
+    },
+    "marketing": {
+      "label": "Marketing",
+      "state_name": "Signal State",
+      "branch": "executive",
+      "icon": "Megaphone",
+      "color": "#F97316"
+    },
+    "paid-media": {
+      "label": "Paid Media",
+      "state_name": "Signal State (Paid Media)",
+      "branch": "executive",
+      "icon": "Target",
+      "color": "#EAB308"
+    },
+    "product": {
+      "label": "Product",
+      "state_name": "Compass State",
+      "branch": "executive",
+      "icon": "Box",
+      "color": "#D946EF"
+    },
+    "project-management": {
+      "label": "Project Management",
+      "state_name": "Logistics State",
+      "branch": "executive",
+      "icon": "ClipboardList",
+      "color": "#0EA5E9"
+    },
+    "quality": {
+      "label": "Quality (Judiciary)",
+      "state_name": "Judiciary (Atlantia Prime)",
+      "branch": "judicial",
+      "icon": "Scale",
+      "color": "#B23B3B",
+      "_note": "Judicial branch. Not a territorial state. Cannot be used as an Executive agent pool."
+    },
+    "sales": {
+      "label": "Sales",
+      "state_name": "Exchange State",
+      "branch": "executive",
+      "icon": "TrendingUp",
+      "color": "#10B981"
+    },
+    "security": {
+      "label": "Security",
+      "state_name": "Ledger State (Security)",
+      "branch": "executive",
+      "memory_tier_default": "ephemeral",
+      "regulated": true,
+      "icon": "ShieldCheck",
+      "color": "#EF4444"
+    },
+    "spatial-computing": {
+      "label": "Spatial Computing",
+      "state_name": "Frontier State",
+      "branch": "executive",
+      "icon": "Boxes",
+      "color": "#06B6D4"
+    },
+    "specialized": {
+      "label": "Specialized",
+      "state_name": "The Federal District",
+      "branch": "executive",
+      "icon": "Sparkles",
+      "color": "#6366F1",
+      "_note": "Cross-cutting. Agents in specialized/ may carry regulated memory_tier on individual files (contract-negotiator uses ephemeral) — check per-file, not division-wide."
+    },
+    "support": {
+      "label": "Support",
+      "state_name": "Exchange State (Support)",
+      "branch": "executive",
+      "icon": "LifeBuoy",
+      "color": "#84CC16"
+    },
+    "testing": {
+      "label": "Testing",
+      "state_name": "Proving State",
+      "branch": "executive",
+      "icon": "FlaskConical",
+      "color": "#F59E0B"
+    }
+  }
+}
