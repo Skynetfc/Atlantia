@@ -1,6 +1,8 @@
 # Atlantia
 
-**232 domain specialists. One runtime. Constitutional governance. Nothing copy-pasted.**
+![Atlantia Banner](assets/atlantia-banner.png)
+
+**251 domain specialists. One runtime. Constitutional governance. Nothing copy-pasted.**
 
 Atlantia merges two open-source projects into a single governed platform:
 
@@ -163,6 +165,23 @@ See `NOTICE` for the full credits.
 3. **Eval scores require Ruflo.** The eval harness produces structural scaffolding without Ruflo installed. Live quality scores (persona vs. baseline delta) require `ruflo` in PATH. The harness degrades gracefully and documents the limitation in the report.
 
 4. **Agent Evaluator benchmarks are not external benchmarks.** Quality scores are relative (persona vs. baseline on Atlantia-defined tasks), not absolute quality ratings. A score of 8/10 means "measurably better than baseline for this task" — it is not an external certification.
+
+---
+
+## Brand Assets
+
+All assets are in `assets/` as PNG files, free to use under the MIT license.
+
+| Asset | File | Use |
+|---|---|---|
+| Logo mark | `assets/atlantia-logo.png` | Docs, presentations, square contexts |
+| Icon / Favicon | `assets/atlantia-icon.png` | Browser favicon, app tile, 32px+ |
+| Wordmark (horizontal) | `assets/atlantia-wordmark.png` | Slide headers, footers, nav bars |
+| README banner | `assets/atlantia-banner.png` | GitHub README, docs site hero |
+| Social card | `assets/atlantia-social.png` | Twitter/X, LinkedIn share image |
+| Judiciary badge | `assets/atlantia-judiciary-badge.png` | Quality division docs, seal |
+| Constitution hero | `assets/atlantia-constitution-hero.png` | Governance docs, presentations |
+| Nation-state map | `assets/atlantia-nation-map.png` | Architecture diagrams, academy docs |
 
 ---
 
