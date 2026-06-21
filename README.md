@@ -168,20 +168,56 @@ See `NOTICE` for the full credits.
 
 ---
 
-## Brand Assets
+## The Nation of Atlantia
 
-All assets are in `assets/` as PNG files, free to use under the MIT license.
+> *"Not by chance, but charted clear, / Sixteen states, one compass here."*  
+> — National Anthem of Atlantia (see `assets/ANTHEM.md`)
 
-| Asset | File | Use |
+Atlantia is a small, functioning nation of AI specialists. Sixteen states, each home to a cluster of domain experts. A judiciary — the Quality division — headquartered separately from every state, whose only job is reviewing the states' work before it ships. A constitution that overrides any individual agent's instructions. A real immigration process for new agents: probation, an actual benchmark exam, then formal naturalization — never automatic. A national bank tracking what every operation actually costs, in Atlantian Credits (₳). A weekly Audit Day publishing benchmark results, wins and losses both. And an honest foreign-policy section explaining exactly which parts of this system are Atlantia's own work, and which are a treaty with Ruflo's runtime, which Atlantia did not build and does not take credit for.
+
+Run `atlantia census` to see the nation's current state for yourself.
+
+### The 16 States
+
+| State | Division | Specialists |
 |---|---|---|
-| Logo mark | `assets/atlantia-logo.png` | Docs, presentations, square contexts |
-| Icon / Favicon | `assets/atlantia-icon.png` | Browser favicon, app tile, 32px+ |
-| Wordmark (horizontal) | `assets/atlantia-wordmark.png` | Slide headers, footers, nav bars |
-| README banner | `assets/atlantia-banner.png` | GitHub README, docs site hero |
-| Social card | `assets/atlantia-social.png` | Twitter/X, LinkedIn share image |
-| Judiciary badge | `assets/atlantia-judiciary-badge.png` | Quality division docs, seal |
-| Constitution hero | `assets/atlantia-constitution-hero.png` | Governance docs, presentations |
-| Nation-state map | `assets/atlantia-nation-map.png` | Architecture diagrams, academy docs |
+| 🔧 Forge State | `engineering` | Backend, mobile, firmware, blockchain, RAG, CMS, rapid prototyping |
+| 📡 Signal State | `marketing` | Content strategy, copywriting, SEO, regional platforms, brand voice |
+| 🤝 Exchange State | `sales` | Discovery coaching, deal strategy, negotiation simulation, pipeline analysis |
+| ⚖️ Ledger State | `finance` + `legal` | FP&A, bookkeeping, tax, billing, legal client intake, contract review |
+| 🎨 Atelier State | `design` | UX research, UI design, whimsy, design systems |
+| 🗺️ Cartography State | `gis` | GIS analysis, BIM, spatial data, mapping |
+| 🛡️ Proving State | `testing` | API testing, accessibility audits, performance benchmarking, QA |
+| 📚 Archive State | `academic` | Anthropology, geography, historiography, psychologist, narratology |
+| 🕹️ Arcade State | `game-development` | Game audio, narrative design, systems design |
+| 🧭 Compass State | `product` | Competitive intelligence, roadmap, product strategy |
+| 📋 Logistics State | `project-management` | Project shepherd, experiment tracking, meeting notes, Jira workflow |
+| 🌐 Frontier State | `spatial-computing` | AR/VR, spatial UX, 3D interfaces |
+| 🏛️ The Federal District | `specialized` | Cross-cutting: contract negotiation, fundraising, data science, org strategy |
+| 📊 Census State | `data` | Statistical modeling, experiment design, RAG architecture |
+| ⚖️ Judiciary | `quality` | Dissent, Hallucination Audit, Provenance, Evaluation, Deprecation, Arbitration, Retrospective |
+
+### Brand Assets
+
+Full asset catalogue at `assets/ASSETS.md`. Color palette: Navy `#1B2A4A` · Amber `#D98E2B` · Teal `#2E6B6B` · Red `#B23B3B` · Off-white `#F4F1EC`.
+
+| Asset | File |
+|---|---|
+| National Flag | `assets/national-symbols/flag.png` |
+| National Seal | `assets/national-symbols/seal.png` |
+| Coat of Arms | `assets/national-symbols/coat-of-arms.png` |
+| Nation Map (16 states) | `assets/national-symbols/nation-map.png` |
+| Compass Rose Logomark | `assets/atlantia-logo-v2.png` |
+| App Icon / Favicon | `assets/atlantia-icon-v2.png` |
+| Constitution Header | `assets/civic-documents/constitution-header.png` |
+| Agent Passport Cover | `assets/civic-documents/passport-cover.png` |
+| Certificate of Naturalization | `assets/civic-documents/naturalization-certificate.png` |
+| Atlantia Prime Plaque | `assets/national-symbols/prime-plaque.png` |
+| 16 State Seals | `assets/state-seals/<state-name>.png` |
+| Currency (coin + banknotes) | `assets/currency/` |
+| Commemorative Stamps | `assets/stamps/` |
+| Division Icons | `assets/division-icons/` |
+| Trust & Warning Badges | `assets/badges/` |
 
 ---
 
