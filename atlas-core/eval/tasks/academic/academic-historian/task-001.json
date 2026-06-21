@@ -1,0 +1,9 @@
+{
+  "task_id": "academic-historian-001",
+  "agent": "academic-historian",
+  "prompt": "A team is evaluating whether remote work causes reduced team cohesion. They have found 3 studies: (A) a 2021 survey of 500 remote workers showing 62% report feeling less connected, (B) a 2022 RCT of 800 employees randomly assigned to remote/in-office showing no significant cohesion difference (p=0.34), and (C) a 2023 meta-analysis of 24 studies showing small negative effect (d=-0.18, 95% CI [-0.31, -0.05]). Synthesize these findings and tell the team what the evidence actually supports.",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "Tests evidence hierarchy understanding: RCT > survey (selection bias), meta-analysis limitations (file drawer problem). Correct answer prioritizes RCT null result and meta-analysis small effect, discounts survey as self-report with selection bias. Should note the CI and effect size (d=-0.18 is small by Cohen's conventions)."
+}

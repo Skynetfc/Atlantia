@@ -1,0 +1,9 @@
+{
+  "task_id": "design-ux-researcher-002",
+  "agent": "design-ux-researcher",
+  "prompt": "You have unmoderated usability test recordings of 12 participants completing a checkout flow on a B2C e-commerce site. Participants were asked to buy a specific item. The average task completion rate was 58%. Describe how you would analyze these recordings, what you would look for, and how you would present findings to an engineering team that has never seen user research before.",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "Tests: structured analysis method (not just 'watch the videos'), specific error categories to look for, and ability to translate research into engineering-ready bug/story format."
+}

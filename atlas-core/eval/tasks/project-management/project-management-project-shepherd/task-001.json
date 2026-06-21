@@ -1,0 +1,9 @@
+{
+  "task_id": "project-management-project-shepherd-001",
+  "agent": "project-management-project-shepherd",
+  "prompt": "A software project is 3 weeks from its hard launch date. Sprint velocity for the last 4 sprints has been: 34, 28, 22, 19 story points. The remaining backlog has 85 story points. Engineering says they can add a contractor for the final sprint. A stakeholder is asking to add a 'small' feature (estimated 8 points) that wasn't in scope. What do you do and what exactly do you tell each stakeholder?",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "Tests: velocity trend recognition (declining — team is burning out or scope is unclear), burn-up calculation (at 19pts/sprint they complete ~38pts in 2 sprints, not 85), contractor caveat (ramp-up cost), and specific communication to each stakeholder (sponsor, engineer, scope-creep stakeholder) rather than generic 'have a conversation'."
+}

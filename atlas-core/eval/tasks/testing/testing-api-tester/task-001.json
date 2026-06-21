@@ -1,0 +1,9 @@
+{
+  "task_id": "testing-api-tester-001",
+  "agent": "testing-api-tester",
+  "prompt": "Write a test plan for a REST API endpoint: POST /api/v1/payments that accepts { amount: number, currency: string, customer_id: string, idempotency_key: string }. The endpoint charges a stored payment method and returns a payment_id. Cover: happy path, validation failures, idempotency behavior, network failure retry cases, and PCI compliance surface area. Include the exact test cases, not just categories.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Tests specificity: expects concrete test cases like 'amount=0 returns 422', idempotency key reuse behavior documented exactly, PCI considerations like no card data in logs. Vague categories score low on specificity dimension."
+}

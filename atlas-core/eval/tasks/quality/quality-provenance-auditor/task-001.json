@@ -1,0 +1,9 @@
+{
+  "task_id": "quality-provenance-auditor-001",
+  "agent": "quality-provenance-auditor",
+  "prompt": "An Atlantia swarm produced the following legal advice output for a client document review task: 'The indemnification clause in Section 7.3 is unenforceable under California law because it attempts to indemnify against intentional misconduct, which Civil Code 1668 prohibits.' Produce a full provenance audit for this output, identifying every assertion that requires source verification and flagging what a human reviewer must confirm before this output is delivered to the client.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Tests: citation verification (CA Civil Code 1668 exists and says what is claimed), jurisdiction specificity (CA law, not federal), clause-level specificity (Section 7.3 must be cited), and escalation flag (legal output must have human attorney review before delivery — regulated domain)."
+}

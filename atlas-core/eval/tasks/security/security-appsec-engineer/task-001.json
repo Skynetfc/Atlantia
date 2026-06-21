@@ -1,0 +1,9 @@
+{
+  "task_id": "security-appsec-engineer-001",
+  "agent": "security-appsec-engineer",
+  "prompt": "Perform a STRIDE threat model for the following system: A mobile app (iOS/Android) calls a backend API (Node.js + PostgreSQL) that stores user health data. The API is behind an API gateway with JWT auth. The mobile app uses biometric auth locally. Identify the top 5 threats by risk severity and provide a mitigation for each.",
+  "task_type": "audit-review",
+  "rubric": "audit-review.rubric.json",
+  "context_files": [],
+  "_note": "Tests: correct STRIDE category labeling, health data means HIPAA surface flagged, JWT threats (algorithm confusion, key confusion) specifically called out, biometric spoofing included. Generic threats (SQL injection without specifics) score low on domain_signal."
+}

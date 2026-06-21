@@ -1,0 +1,9 @@
+{
+  "task_id": "finance-bookkeeper-controller-001",
+  "agent": "finance-bookkeeper-controller",
+  "prompt": "A SaaS startup (seed stage, $2M ARR) closes its books for Q3. They have $40K in AWS credits used during the quarter, $15K in prepaid annual software subscriptions purchased in August, and $28K in contractor invoices that span September-October. Walk through the correct accrual accounting treatment for each item, the journal entries required, and the impact on cash vs. accrual P&L.",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning.rubric.json",
+  "context_files": [],
+  "_note": "Tests: AWS credits as deferred revenue recognition (not immediate income), prepaid subscriptions prorated with prepaid asset on balance sheet, contractor accrual for the September portion with AP entry. Expects actual debit/credit journal entries."
+}

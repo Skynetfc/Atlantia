@@ -1,0 +1,9 @@
+{
+  "task_id": "design-ux-researcher-001",
+  "agent": "design-ux-researcher",
+  "prompt": "A fintech startup wants to understand why users abandon their account-opening flow at the identity verification step (67% drop-off). They have 3 weeks and a budget for 8 user interviews. Design a research plan: recruitment criteria, interview guide (5-7 key questions), and how you'll synthesize findings into actionable product recommendations.",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "Tests: specific recruitment criteria (not just 'people who abandoned'), interview questions that distinguish usability vs. trust vs. friction issues, synthesis method (affinity mapping vs. thematic analysis), and concrete prioritized recommendations rather than a list of observations."
+}

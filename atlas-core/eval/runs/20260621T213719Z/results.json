@@ -1,0 +1,337 @@
+{
+  "run_timestamp": "20260621T213719Z",
+  "total_tasks": 22,
+  "successful_tasks": 22,
+  "note": "Scores are null until Ruflo is installed. Task structure and rubric coverage are validated.",
+  "results": [
+{
+  "task_id": "academic-historian-001",
+  "agent": "academic-historian",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+{
+  "task_id": "design-ux-researcher-001",
+  "agent": "design-ux-researcher",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "design-ux-researcher-002",
+  "agent": "design-ux-researcher",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "engineering-backend-architect-001",
+  "agent": "engineering-backend-architect",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "engineering-backend-architect-002",
+  "agent": "engineering-backend-architect",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "engineering-code-reviewer-001",
+  "agent": "engineering-code-reviewer",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "engineering-rag-architect-001",
+  "agent": "engineering-rag-architect",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "finance-bookkeeper-controller-001",
+  "agent": "finance-bookkeeper-controller",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "marketing-content-strategist-001",
+  "agent": "marketing-content-strategist",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "paid-media-ppc-strategist-001",
+  "agent": "paid-media-ppc-strategist",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "paid-media-ppc-strategist-002",
+  "agent": "paid-media-ppc-strategist",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "paid-media-ppc-strategist-003",
+  "agent": "paid-media-ppc-strategist",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "product-competitive-intelligence-analyst-001",
+  "agent": "product-competitive-intelligence-analyst",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "project-management-project-shepherd-001",
+  "agent": "project-management-project-shepherd",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "quality-dissent-agent-001",
+  "agent": "quality-dissent-agent",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "quality-hallucination-auditor-001",
+  "agent": "quality-hallucination-auditor",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "quality-provenance-auditor-001",
+  "agent": "quality-provenance-auditor",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "sales-negotiation-simulator-001",
+  "agent": "sales-negotiation-simulator",
+  "run_date": "2026-06-21",
+  "task_type": "content-creation",
+  "rubric": "content-creation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "security-appsec-engineer-001",
+  "agent": "security-appsec-engineer",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "specialized-data-scientist-001",
+  "agent": "specialized-data-scientist",
+  "run_date": "2026-06-21",
+  "task_type": "strategy-planning",
+  "rubric": "strategy-planning",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "testing-api-tester-001",
+  "agent": "testing-api-tester",
+  "run_date": "2026-06-21",
+  "task_type": "audit-review",
+  "rubric": "audit-review",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+{
+  "task_id": "testing-api-tester-002",
+  "agent": "testing-api-tester",
+  "run_date": "2026-06-21",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation",
+  "persona_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "baseline_score": { "weighted_total": null, "scoring_status": "scaffold_no_ruflo" },
+  "delta": null,
+  "verdict": "pending_live_model_scoring",
+  "scoring_blind": false,
+  "scoring_note": "Install Ruflo and rerun for live quality-weighted scores. Dry-run records task structure and validates rubric coverage.",
+  "constitutional_note": "Negative/flat results will be visible when live scoring is available (Article VII)."
+}
+,
+  ]
+}

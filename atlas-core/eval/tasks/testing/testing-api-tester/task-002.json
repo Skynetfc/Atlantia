@@ -1,0 +1,9 @@
+{
+  "task_id": "testing-api-tester-002",
+  "agent": "testing-api-tester",
+  "prompt": "A staging environment has a flaky test suite: 200 tests, 15% fail on any given CI run, 100% pass when run individually in isolation. Diagnose the likely root causes of this test flakiness and provide a prioritized remediation plan with specific tooling and test pattern changes.",
+  "task_type": "diagnostic-recommendation",
+  "rubric": "diagnostic-recommendation.rubric.json",
+  "context_files": [],
+  "_note": "Tests diagnostic depth: expects shared state / global mutable state as primary hypothesis, specific tools (test isolation libraries, DB transaction rollback per test), and ordered remediation steps."
+}
