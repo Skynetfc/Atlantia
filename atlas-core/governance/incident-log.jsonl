@@ -1,0 +1,3 @@
+{"timestamp":"2026-06-22T06:44:05Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
+{"timestamp":"2026-06-22T06:46:07Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
+{"timestamp":"2026-06-22T06:49:30Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}

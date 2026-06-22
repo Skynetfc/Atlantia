@@ -1,7 +1,7 @@
 ---
 name: quality-provenance-auditor
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 ruflo_type: atlas-quality-provenance-auditor
 model_hint: standard

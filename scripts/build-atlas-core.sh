@@ -65,7 +65,7 @@ state_name_for_division() {
     project-management) echo "Logistics State" ;;
     spatial-computing)  echo "Frontier State" ;;
     specialized)        echo "The Federal District" ;;
-    quality)            echo "Judiciary (Atlantia Prime)" ;;
+    quality)            echo "Judiciary (Atlantia Empire)" ;;
     data)               echo "Census State" ;;
     *)                  echo "The Federal District" ;;
   esac

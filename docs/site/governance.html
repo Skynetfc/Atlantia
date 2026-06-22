@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Governance & RBAC — Atlantia Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h1>⚓ Atlantia</h1>
+  <div class="tagline">Mapped, not memorized.</div>
+
+  <div class="section-label">Start here</div>
+  <a href="index.html">Overview</a>
+  <a href="how-it-runs.html">How This Runs</a>
+  <a href="quick-start.html">Quick Start</a>
+
+  <div class="section-label">Architecture</div>
+  <a href="architecture.html">System Design</a>
+  <a href="agents.html">Agent Roster</a>
+  <a href="handoff-schema.html">Handoff Schema</a>
+
+  <div class="section-label">The Empire</div>
+  <a href="nation.html">The 16 States</a>
+  <a href="constitution.html">Constitution</a>
+  <a href="governance.html">Governance & RBAC</a>
+
+  <div class="section-label">Quality</div>
+  <a href="judiciary.html">Judiciary Division</a>
+  <a href="eval-harness.html">Eval Harness</a>
+  <a href="known-limitations.html">Known Limitations</a>
+
+  <div class="section-label">Engineering</div>
+  <a href="cli.html">CLI Reference</a>
+  <a href="tests.html">Test Suite</a>
+  <a href="branding.html">Brand Assets</a>
+</nav>
+<main>
+
+<h1>Governance &amp; RBAC</h1>
+<p>Every privileged action is tied to a named role defined in <code>atlas-core/governance/roles.json</code>. Authority is explicit, logged, and attributable — never implicit. (Constitution Article VIII)</p>
+
+<h2>Roles</h2>
+<table>
+<tr><th>Role</th><th>Can</th><th>Cannot</th></tr>
+<tr><td><strong>Contributor</strong></td><td>Propose personas, open PRs</td><td>Approve naturalization, touch budget, trigger emergency-stop</td></tr>
+<tr><td><strong>Judiciary Reviewer</strong></td><td>Score proposals, raise Dissent/Arbitration flags, run eval harness</td><td>Approve naturalization alone, modify budget</td></tr>
+<tr><td><strong>Commissioning Officer</strong></td><td>Approve naturalization, approve deprecation</td><td>Amend constitution, change budget tiers</td></tr>
+<tr><td><strong>Treasury Officer</strong></td><td>Approve Capital Allocation proposals, set project budgets</td><td>Approve naturalization, trigger emergency-stop</td></tr>
+<tr><td><strong>Security Officer</strong></td><td>Trigger emergency-stop, respond to disclosures</td><td>Approve naturalization, modify budget</td></tr>
+<tr><td><strong>Constitutional Council</strong></td><td>Amend constitution, override any decision (logged)</td><td>Nothing withheld — which is why it requires multi-person sign-off</td></tr>
+</table>
+
+<h2>Agent Lifecycle (Citizenship)</h2>
+<table>
+<tr><th>Step</th><th>Civic term</th><th>Technical reality</th></tr>
+<tr><td>1</td><td>Birth</td><td>Dynamic Agent Synthesizer drafts persona file</td></tr>
+<tr><td>2</td><td>Visa / residency</td><td>status: probationary — sandbox-only</td></tr>
+<tr><td>3</td><td>Citizenship exam</td><td>Agent Evaluator benchmark run, 3+ tasks</td></tr>
+<tr><td>4</td><td>Naturalization</td><td>Human approval (Commissioning Officer), status: active</td></tr>
+<tr><td>5</td><td>Deportation</td><td>Deprecation Auditor → status: revoked, file archived not deleted</td></tr>
+</table>
+
+<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+</main>
+</div>
+</body>
+</html>

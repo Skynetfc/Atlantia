@@ -3,7 +3,7 @@ name: quality-deprecation-auditor
 description: Atlantia specialist agent — quality division
 ruflo_type: atlas-quality-deprecation-auditor
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 memory_tier: project-scoped
 status: active

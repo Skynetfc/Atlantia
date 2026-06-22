@@ -192,12 +192,130 @@ cmd_preflight() {
   bash "$ROOT_DIR/scripts/constitutional-preflight.sh" "$@"
 }
 
+# ── run ───────────────────────────────────────────────────────────────────────
+cmd_run() {
+  local demo=false
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --demo) demo=true; shift ;;
+      *) echo "Unknown option: $1" >&2; exit 1 ;;
+    esac
+  done
+
+  if $demo; then
+    # Offline demo — no API key or Ruflo connection required.
+    # Runs a pre-scripted 3-step swarm pipeline against synthetic data.
+    TOTAL_AGENTS=$(count_source_personas 2>/dev/null || echo "251")
+    cat <<DEMO
+
+╔══════════════════════════════════════════════════════════════════╗
+║          ATLANTIA EMPIRE — DEMO MODE (no API key needed)         ║
+╚══════════════════════════════════════════════════════════════════╝
+
+  Roster: $TOTAL_AGENTS specialists across 16 states + Judiciary
+  Demo:   3-step pipeline — Product Strategy → Engineering → QA Review
+
+─────────────────────────────────────────────────────────────────────
+STEP 1 ▶  Navigator initialises swarm plan
+─────────────────────────────────────────────────────────────────────
+
+  Swarm plan: "Evaluate feasibility of adding a forecasting feature"
+  Budget allocated: 150 Atlantian Credits (₳)
+  Pre-flight check: ✅ Budget within ceiling · ✅ Judicial review gate set
+
+  Agents selected:
+    → atlas-product-competitive-intelligence-analyst   [Compass State]
+    → atlas-specialized-forecasting-specialist         [The Federal District]
+    → atlas-quality-agent-evaluator                   [Judiciary]
+
+─────────────────────────────────────────────────────────────────────
+STEP 2 ▶  Handoff schema (agent → agent)
+─────────────────────────────────────────────────────────────────────
+
+  {
+    "from":        "atlas-product-competitive-intelligence-analyst",
+    "to":          "atlas-specialized-forecasting-specialist",
+    "output_type": "competitive_landscape_summary",
+    "confidence":  0.84,
+    "payload": {
+      "competitors_with_forecasting": ["Mixpanel", "Amplitude", "Hex"],
+      "feature_gap_assessment":       "High — 3 of 5 direct competitors ship it",
+      "recommended_focus":            "churn prediction over demand forecasting"
+    },
+    "credits_consumed": 42
+  }
+
+  {
+    "from":        "atlas-specialized-forecasting-specialist",
+    "to":          "atlas-quality-agent-evaluator",
+    "output_type": "forecast_spec",
+    "confidence":  0.81,
+    "payload": {
+      "model_type":         "cohort-based churn prediction",
+      "horizon":            "90-day",
+      "confidence_interval": "80%",
+      "data_required":      "90+ days of retention events",
+      "known_limitation":   "insufficient if cohort size < 200 per segment"
+    },
+    "credits_consumed": 61
+  }
+
+─────────────────────────────────────────────────────────────────────
+STEP 3 ▶  Judicial review (Agent Evaluator)
+─────────────────────────────────────────────────────────────────────
+
+  Evaluating: Forecasting Specialist output vs. baseline (naive model)
+  Rubric:     accuracy_of_assumptions · limitation_disclosure · actionability
+
+  Result:
+    accuracy_of_assumptions:  8.1 / 10  ✅
+    limitation_disclosure:     9.0 / 10  ✅ (known limitation clearly stated)
+    actionability:             7.4 / 10  ✅
+    Overall quality score:     8.2 / 10
+
+  Verdict: PASS — deliverable meets acceptance criteria
+  Credits consumed total: 103 ₳ of 150 ₳ allocated
+
+─────────────────────────────────────────────────────────────────────
+PIPELINE COMPLETE
+─────────────────────────────────────────────────────────────────────
+
+  ₳ Credits consumed: 103 / 150
+  Pipeline duration:  3 steps, 0 retries, 0 human escalations
+  Judicial gate:      PASSED (score 8.2/10)
+  Incident log:       No entries
+
+  This was a synthetic demo. No API keys used. No Ruflo connection needed.
+  Real runs require: ruflo installed + model API key + atlantia configured.
+
+  To see the full roster:   atlantia census
+  To run real pre-flight:   atlantia preflight --plan <swarm-plan.json>
+  Docs:                     docs/site/index.html  (build: atlantia docs)
+
+DEMO
+  else
+    echo "Usage: atlantia run --demo" >&2
+    echo "       (Hosted swarm execution requires Ruflo — see README)" >&2
+    exit 1
+  fi
+}
+
+# ── docs ──────────────────────────────────────────────────────────────────────
+cmd_docs() {
+  bash "$ROOT_DIR/scripts/build-docs.sh" "$@"
+}
+
+# ── test ──────────────────────────────────────────────────────────────────────
+cmd_test() {
+  bash "$ROOT_DIR/scripts/run-tests.sh" "$@"
+}
+
 # ── help ──────────────────────────────────────────────────────────────────────
 cmd_help() {
   cat <<EOF
 
 Atlantia CLI v$VERSION
-$( count_source_personas 2>/dev/null || echo "232+" ) specialists. One runtime. Constitutional governance.
+$( count_source_personas 2>/dev/null || echo "251+" ) specialists. One runtime. Constitutional governance.
 
 Usage: atlantia <command> [options]
 
@@ -213,6 +331,9 @@ Commands:
     [--division <name>]
     [--verbose]
   preflight --plan <file>     Constitutional pre-flight check for a swarm plan
+  run --demo                  Run offline demo (no API key needed)
+  docs [--serve]              Build static documentation site
+  test                        Run engineering test suite
   help                        Show this help
   version                     Show version
 
@@ -241,6 +362,9 @@ case "$cmd" in
   improvement-report) cmd_improvement_report "$@" ;;
   build)              cmd_build "$@" ;;
   preflight)          cmd_preflight "$@" ;;
+  run)                cmd_run "$@" ;;
+  docs)               cmd_docs "$@" ;;
+  test)               cmd_test "$@" ;;
   help|--help|-h)     cmd_help ;;
   version|--version)  echo "atlantia $VERSION" ;;
   *)

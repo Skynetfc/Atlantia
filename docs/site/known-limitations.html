@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Known Limitations — Atlantia Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h1>⚓ Atlantia</h1>
+  <div class="tagline">Mapped, not memorized.</div>
+
+  <div class="section-label">Start here</div>
+  <a href="index.html">Overview</a>
+  <a href="how-it-runs.html">How This Runs</a>
+  <a href="quick-start.html">Quick Start</a>
+
+  <div class="section-label">Architecture</div>
+  <a href="architecture.html">System Design</a>
+  <a href="agents.html">Agent Roster</a>
+  <a href="handoff-schema.html">Handoff Schema</a>
+
+  <div class="section-label">The Empire</div>
+  <a href="nation.html">The 16 States</a>
+  <a href="constitution.html">Constitution</a>
+  <a href="governance.html">Governance & RBAC</a>
+
+  <div class="section-label">Quality</div>
+  <a href="judiciary.html">Judiciary Division</a>
+  <a href="eval-harness.html">Eval Harness</a>
+  <a href="known-limitations.html">Known Limitations</a>
+
+  <div class="section-label">Engineering</div>
+  <a href="cli.html">CLI Reference</a>
+  <a href="tests.html">Test Suite</a>
+  <a href="branding.html">Brand Assets</a>
+</nav>
+<main>
+
+<h1>Known Limitations</h1>
+<div class='warning'>
+These are real limitations, published here because hiding them would be worse than admitting them. The eval harness exists specifically so these are discovered and documented rather than assumed away.
+</div>
+
+<h2>Agent Quality</h2>
+<ul>
+<li>Agent Evaluator benchmarks are not external benchmarks. Scores are relative (persona vs. baseline on Atlantia-defined tasks). A score of 8/10 means &ldquo;measurably better than baseline for this task&rdquo; — not an external certification.</li>
+<li>Not all 251+ agents have been benchmarked. Unbenchmarked agents should be treated as <em>promising candidates</em>, not verified performers. The eval harness is how you fix this.</li>
+<li>Personas cannot autonomously access external tools, APIs, or real-time data without explicit tool-grounding through Ruflo. Personas that reference &ldquo;checking a source&rdquo; are describing an intended capability — verify tool availability before relying on it.</li>
+</ul>
+
+<h2>Runtime Dependency</h2>
+<ul>
+<li>Atlantia depends on Ruflo for swarm execution, persistent memory, and model routing. If Ruflo's API changes in a breaking way, Atlantia's runtime integration breaks too. Ruflo is pinned — see <code>package.json</code> — but that pin must be manually updated when Ruflo releases a compatible version.</li>
+<li>Standalone mode (no Ruflo) works for individual persona use but loses swarm coordination, memory persistence, and cost-aware routing entirely.</li>
+</ul>
+
+<h2>Self-Improvement Limits</h2>
+<ul>
+<li>The improvement loop (Retrospective Agent → Lessons Ledger → Dynamic Agent Synthesizer) compounds slowly, not exponentially. Meaningful improvement accumulates across many projects, not after each message.</li>
+<li>No proposed change is auto-merged — every change requires human approval. This is intentional and constitutional, not a bug.</li>
+</ul>
+
+<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+</main>
+</div>
+</body>
+</html>

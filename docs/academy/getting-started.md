@@ -26,7 +26,7 @@ Atlantia operates under a constitutional separation of powers:
 The domain specialists: engineering, marketing, sales, legal, finance, GIS, design, and all other division agents. They produce deliverables. They cannot mark their own output as final.
 
 ### Judicial Branch — "checks the work"
-The Quality division, seated in Atlantia Prime (the repo root). Includes:
+The Quality division, seated in Atlantia Empire (the repo root). Includes:
 - **Dissent Agent** — reviews individual outputs, flags objectionable claims
 - **Hallucination Auditor** — claim-by-claim factual audit on externally-facing content
 - **Provenance Auditor** — chain-of-custody tracking for regulated-domain artifacts

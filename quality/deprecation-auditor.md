@@ -1,7 +1,7 @@
 ---
 name: quality-deprecation-auditor
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 ruflo_type: atlas-quality-deprecation-auditor
 model_hint: standard

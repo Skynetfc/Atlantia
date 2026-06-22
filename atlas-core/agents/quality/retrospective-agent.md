@@ -3,7 +3,7 @@ name: quality-retrospective-agent
 description: Atlantia specialist agent — quality division
 ruflo_type: atlas-quality-retrospective-agent
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 memory_tier: project-scoped
 status: active

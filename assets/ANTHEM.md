@@ -26,4 +26,4 @@ Atlantia answers first to you.
 
 *Motto: "Mapped, not memorized."*  
 *Currency: The Atlantian Credit (₳)*  
-*Capital: Atlantia Prime*
+*Capital: Atlantia Empire*

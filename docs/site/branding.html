@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand Assets — Atlantia Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h1>⚓ Atlantia</h1>
+  <div class="tagline">Mapped, not memorized.</div>
+
+  <div class="section-label">Start here</div>
+  <a href="index.html">Overview</a>
+  <a href="how-it-runs.html">How This Runs</a>
+  <a href="quick-start.html">Quick Start</a>
+
+  <div class="section-label">Architecture</div>
+  <a href="architecture.html">System Design</a>
+  <a href="agents.html">Agent Roster</a>
+  <a href="handoff-schema.html">Handoff Schema</a>
+
+  <div class="section-label">The Empire</div>
+  <a href="nation.html">The 16 States</a>
+  <a href="constitution.html">Constitution</a>
+  <a href="governance.html">Governance & RBAC</a>
+
+  <div class="section-label">Quality</div>
+  <a href="judiciary.html">Judiciary Division</a>
+  <a href="eval-harness.html">Eval Harness</a>
+  <a href="known-limitations.html">Known Limitations</a>
+
+  <div class="section-label">Engineering</div>
+  <a href="cli.html">CLI Reference</a>
+  <a href="tests.html">Test Suite</a>
+  <a href="branding.html">Brand Assets</a>
+</nav>
+<main>
+
+<h1>Brand &amp; National Assets</h1>
+<p>Full asset catalogue at <code>assets/ASSETS.md</code>. National Anthem at <code>assets/ANTHEM.md</code>.</p>
+
+<h2>Color Palette</h2>
+<table>
+<tr><th>Role</th><th>Hex</th><th>Use</th></tr>
+<tr><td>Navy (primary)</td><td><code>#1B2A4A</code></td><td>Headers, borders, primary elements</td></tr>
+<tr><td>Amber (accent)</td><td><code>#D98E2B</code></td><td>Compass rose, highlights, active state</td></tr>
+<tr><td>Teal (QA/trust)</td><td><code>#2E6B6B</code></td><td>Judiciary, eval results, trust signals — reserved for trust content only</td></tr>
+<tr><td>Brick red (risk)</td><td><code>#B23B3B</code></td><td>Deprecation flags, known limitations</td></tr>
+<tr><td>Off-white (bg)</td><td><code>#F4F1EC</code></td><td>Backgrounds, document bases</td></tr>
+</table>
+
+<h2>National Symbols</h2>
+<ul>
+<li>National Flag — <code>assets/national-symbols/flag.png</code></li>
+<li>National Seal — <code>assets/national-symbols/seal.png</code></li>
+<li>Coat of Arms — <code>assets/national-symbols/coat-of-arms.png</code></li>
+<li>Nation Map (16 states) — <code>assets/national-symbols/nation-map.png</code></li>
+<li>Atlantia Empire Capital Plaque — <code>assets/national-symbols/prime-plaque.png</code></li>
+</ul>
+
+<h2>Civic Documents</h2>
+<ul>
+<li>Constitution Header — <code>assets/civic-documents/constitution-header.png</code></li>
+<li>Agent Passport Cover — <code>assets/civic-documents/passport-cover.png</code></li>
+<li>Certificate of Naturalization — <code>assets/civic-documents/naturalization-certificate.png</code></li>
+</ul>
+
+<h2>National Anthem</h2>
+<blockquote>
+Not by chance, but charted clear,<br>
+Sixteen states, one compass here.<br>
+What we build, we test and check —<br>
+No claim stands without its check.
+</blockquote>
+<p><em>Three verses — full text at <code>assets/ANTHEM.md</code></em></p>
+
+<h2>Generation Instructions</h2>
+<p>Remaining batches (state seals, currency, stamps, division icons, dark-mode variants) are documented in <code>assets/generate-remaining.sh</code> — exact image prompts ready to paste into a generation session.</p>
+
+<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+</main>
+</div>
+</body>
+</html>

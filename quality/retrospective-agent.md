@@ -1,7 +1,7 @@
 ---
 name: quality-retrospective-agent
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 ruflo_type: atlas-quality-retrospective-agent
 model_hint: standard

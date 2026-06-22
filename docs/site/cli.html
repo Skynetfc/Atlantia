@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLI Reference — Atlantia Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h1>⚓ Atlantia</h1>
+  <div class="tagline">Mapped, not memorized.</div>
+
+  <div class="section-label">Start here</div>
+  <a href="index.html">Overview</a>
+  <a href="how-it-runs.html">How This Runs</a>
+  <a href="quick-start.html">Quick Start</a>
+
+  <div class="section-label">Architecture</div>
+  <a href="architecture.html">System Design</a>
+  <a href="agents.html">Agent Roster</a>
+  <a href="handoff-schema.html">Handoff Schema</a>
+
+  <div class="section-label">The Empire</div>
+  <a href="nation.html">The 16 States</a>
+  <a href="constitution.html">Constitution</a>
+  <a href="governance.html">Governance & RBAC</a>
+
+  <div class="section-label">Quality</div>
+  <a href="judiciary.html">Judiciary Division</a>
+  <a href="eval-harness.html">Eval Harness</a>
+  <a href="known-limitations.html">Known Limitations</a>
+
+  <div class="section-label">Engineering</div>
+  <a href="cli.html">CLI Reference</a>
+  <a href="tests.html">Test Suite</a>
+  <a href="branding.html">Brand Assets</a>
+</nav>
+<main>
+
+<h1>CLI Reference</h1>
+<pre><code>atlantia &lt;command&gt; [options]</code></pre>
+
+<h2>census</h2>
+<p>Shows the current empire state: agent counts, states, treasury balance, last audit day.</p>
+<pre><code>atlantia census</code></pre>
+
+<h2>gsp [--period weekly|daily]</h2>
+<p>Gross Specialist Product — quality-weighted productivity report across all states.</p>
+<pre><code>atlantia gsp
+atlantia gsp --period daily</code></pre>
+
+<h2>run --demo</h2>
+<p>Runs a pre-scripted 3-step offline demo swarm. No API key or Ruflo required. Shows Navigator initialization, handoff schema, and judicial review.</p>
+<pre><code>atlantia run --demo</code></pre>
+
+<h2>preflight --plan &lt;file&gt;</h2>
+<p>Constitutional pre-flight check for a swarm plan. Checks budget ceiling, RBAC, regulated-agent memory tiers, and judicial review gate.</p>
+<pre><code>atlantia preflight --plan swarm-plan.json</code></pre>
+
+<h2>emergency-stop</h2>
+<p>Immediately terminates all active swarms and background daemons. Writes a timestamped incident log entry. Requires <code>security_officer</code> role (roles.json).</p>
+<pre><code>atlantia emergency-stop --reason "quota overrun" --user githubname</code></pre>
+
+<h2>build [--dry-run] [--division &lt;name&gt;]</h2>
+<p>Regenerates <code>atlas-core/agents/</code> from source persona files in division directories.</p>
+<pre><code>atlantia build
+atlantia build --dry-run
+atlantia build --division engineering</code></pre>
+
+<h2>improvement-report [--since YYYY-MM-DD]</h2>
+<p>Rolling quality improvement trend from the Lessons Ledger.</p>
+<pre><code>atlantia improvement-report --since 2026-01-01</code></pre>
+
+<h2>test</h2>
+<p>Runs the engineering test suite (unit + integration). See <code>scripts/run-tests.sh</code>.</p>
+<pre><code>atlantia test</code></pre>
+
+<h2>docs [--serve]</h2>
+<p>Builds this static documentation site to <code>docs/site/</code>.</p>
+<pre><code>atlantia docs</code></pre>
+
+<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+</main>
+</div>
+</body>
+</html>

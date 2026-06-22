@@ -22,7 +22,7 @@ Color palette (all assets use only these):
 | `national-symbols/seal.png` | National Seal |
 | `national-symbols/coat-of-arms.png` | Coat of Arms |
 | `national-symbols/nation-map.png` | Nation Map — 16 States |
-| `national-symbols/prime-plaque.png` | Atlantia Prime Capital Plaque |
+| `national-symbols/prime-plaque.png` | Atlantia Empire Capital Plaque |
 | `civic-documents/constitution-header.png` | Constitution Document Header |
 | `civic-documents/passport-cover.png` | Agent Passport Cover |
 | `civic-documents/naturalization-certificate.png` | Certificate of Naturalization |
@@ -109,7 +109,7 @@ See `ANTHEM.md` — original text, three verses, free to use (MIT).
 
 *Motto: "Mapped, not memorized."*  
 *Currency: The Atlantian Credit (₳)*  
-*Capital: Atlantia Prime*
+*Capital: Atlantia Empire*
 
 ---
 

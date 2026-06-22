@@ -17,6 +17,6 @@
     "specialized": { "state_name": "The Federal District", "reviewers": ["YOUR_USERNAME"], "domain_note": "Cross-cutting — each PR evaluated per its specific domain" },
     "paid-media": { "state_name": "Signal State (Paid Media)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have paid advertising background" },
     "support": { "state_name": "Exchange State (Support)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Must have customer support background" },
-    "quality": { "state_name": "Judiciary (not a state)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Judiciary branch — seated in Atlantia Prime, not territorial" }
+    "quality": { "state_name": "Judiciary (not a state)", "reviewers": ["YOUR_USERNAME"], "domain_note": "Judiciary branch — seated in Atlantia Empire, not territorial" }
   }
 }

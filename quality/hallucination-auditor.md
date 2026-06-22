@@ -1,7 +1,7 @@
 ---
 name: quality-hallucination-auditor
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 ruflo_type: atlas-quality-hallucination-auditor
 model_hint: standard

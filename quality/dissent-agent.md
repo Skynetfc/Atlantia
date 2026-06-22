@@ -1,7 +1,7 @@
 ---
 name: quality-dissent-agent
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 ruflo_type: atlas-quality-dissent-agent
 model_hint: standard

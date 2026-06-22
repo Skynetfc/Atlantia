@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quick Start — Atlantia Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h1>⚓ Atlantia</h1>
+  <div class="tagline">Mapped, not memorized.</div>
+
+  <div class="section-label">Start here</div>
+  <a href="index.html">Overview</a>
+  <a href="how-it-runs.html">How This Runs</a>
+  <a href="quick-start.html">Quick Start</a>
+
+  <div class="section-label">Architecture</div>
+  <a href="architecture.html">System Design</a>
+  <a href="agents.html">Agent Roster</a>
+  <a href="handoff-schema.html">Handoff Schema</a>
+
+  <div class="section-label">The Empire</div>
+  <a href="nation.html">The 16 States</a>
+  <a href="constitution.html">Constitution</a>
+  <a href="governance.html">Governance & RBAC</a>
+
+  <div class="section-label">Quality</div>
+  <a href="judiciary.html">Judiciary Division</a>
+  <a href="eval-harness.html">Eval Harness</a>
+  <a href="known-limitations.html">Known Limitations</a>
+
+  <div class="section-label">Engineering</div>
+  <a href="cli.html">CLI Reference</a>
+  <a href="tests.html">Test Suite</a>
+  <a href="branding.html">Brand Assets</a>
+</nav>
+<main>
+
+<h1>Quick Start</h1>
+
+<h2>1. Try without installing anything</h2>
+<pre><code>bash bin/atlantia run --demo</code></pre>
+<p>Runs an offline demo pipeline. No API key, no Ruflo, no configuration.</p>
+
+<h2>2. See the empire's current state</h2>
+<pre><code>bash bin/atlantia census</code></pre>
+
+<h2>3. Run the smoke test (14 checks)</h2>
+<pre><code>bash scripts/no-ruflo-smoke.sh</code></pre>
+
+<h2>4. Run the engineering test suite</h2>
+<pre><code>bash scripts/run-tests.sh
+# or via CLI:
+bash bin/atlantia test</code></pre>
+
+<h2>5. Use a persona as a system prompt (standalone, no Ruflo)</h2>
+<pre><code>cat engineering/engineering-backend-developer.md
+# Paste the content into any tool that supports custom system prompts.</code></pre>
+
+<h2>6. Spawn with Ruflo</h2>
+<pre><code>ruflo agent spawn -t atlas-engineering-backend-developer
+ruflo swarm init --agent-pool atlas --topology hierarchical</code></pre>
+
+<h2>Directory Structure</h2>
+<pre><code>atlantia/
+├── bin/atlantia           # CLI entry point
+├── constitution.md        # 8-article constitution
+├── atlas-core/            # Ruflo-compatible generated agents + governance
+│   ├── agents/            # 175+ generated atlas-* agents
+│   ├── eval/              # Eval harness (22 tasks, 17 agents)
+│   └── governance/        # roles.json, budget.json, lessons-ledger.jsonl
+├── engineering/           # Forge State source personas
+├── quality/               # Judiciary source personas
+├── specialized/           # Federal District source personas
+├── [14 more divisions]/
+├── assets/                # National symbols, brand assets, anthem
+├── docs/                  # Academy onboarding + generated site
+└── scripts/               # Build, test, preflight, emergency-stop</code></pre>
+
+<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+</main>
+</div>
+</body>
+</html>

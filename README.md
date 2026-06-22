@@ -106,7 +106,7 @@ atlantia emergency-stop --reason "runaway daemon" --user your-username
 | `project-management` | Logistics State | 4+ | Agile, waterfall, portfolio |
 | `spatial-computing` | Frontier State | 3+ | AR/VR/XR |
 | `specialized` | The Federal District | 12+ | Cross-cutting: data science, legal, RAG, finance, HR |
-| `quality` | Judiciary (Atlantia Prime) | 7 | Judicial branch only — does not produce domain deliverables |
+| `quality` | Judiciary (Atlantia Empire) | 7 | Judicial branch only — does not produce domain deliverables |
 
 ---
 
@@ -156,6 +156,21 @@ See `NOTICE` for the full credits.
 
 ---
 
+## How This Runs
+
+Atlantia is a local command-line tool. There is no hosted Atlantia service, no account system, and no Atlantia-operated server processing your data. Everything runs on your own machine (or your own Ruflo-connected infrastructure), using your own API keys and your own compute. The only "hosted" element is the documentation site itself, which is static and contains no user data.
+
+Try it without installing anything:
+
+```bash
+bash bin/atlantia run --demo    # Offline pipeline demo — no API key needed
+bash bin/atlantia census        # Current empire state
+bash bin/atlantia test          # Engineering test suite (33 checks)
+bash scripts/build-docs.sh      # Build static docs site → docs/site/index.html
+```
+
+---
+
 ## Known Limitations
 
 1. **Memory tiering is not regulatory compliance.** Ephemeral memory prevents Atlantia-layer retention for regulated domains. It does not make any persona HIPAA/GDPR/SOC2 compliant — that depends on your infrastructure, contracts, and review processes.
@@ -168,7 +183,7 @@ See `NOTICE` for the full credits.
 
 ---
 
-## The Nation of Atlantia
+## Atlantia Empire
 
 > *"Not by chance, but charted clear, / Sixteen states, one compass here."*  
 > — National Anthem of Atlantia (see `assets/ANTHEM.md`)
@@ -212,7 +227,7 @@ Full asset catalogue at `assets/ASSETS.md`. Color palette: Navy `#1B2A4A` · Amb
 | Constitution Header | `assets/civic-documents/constitution-header.png` |
 | Agent Passport Cover | `assets/civic-documents/passport-cover.png` |
 | Certificate of Naturalization | `assets/civic-documents/naturalization-certificate.png` |
-| Atlantia Prime Plaque | `assets/national-symbols/prime-plaque.png` |
+| Atlantia Empire Plaque | `assets/national-symbols/prime-plaque.png` |
 | 16 State Seals | `assets/state-seals/<state-name>.png` |
 | Currency (coin + banknotes) | `assets/currency/` |
 | Commemorative Stamps | `assets/stamps/` |

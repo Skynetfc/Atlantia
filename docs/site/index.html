@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview — Atlantia Empire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <h1>⚓ Atlantia</h1>
+  <div class="tagline">Mapped, not memorized.</div>
+
+  <div class="section-label">Start here</div>
+  <a href="index.html">Overview</a>
+  <a href="how-it-runs.html">How This Runs</a>
+  <a href="quick-start.html">Quick Start</a>
+
+  <div class="section-label">Architecture</div>
+  <a href="architecture.html">System Design</a>
+  <a href="agents.html">Agent Roster</a>
+  <a href="handoff-schema.html">Handoff Schema</a>
+
+  <div class="section-label">The Empire</div>
+  <a href="nation.html">The 16 States</a>
+  <a href="constitution.html">Constitution</a>
+  <a href="governance.html">Governance & RBAC</a>
+
+  <div class="section-label">Quality</div>
+  <a href="judiciary.html">Judiciary Division</a>
+  <a href="eval-harness.html">Eval Harness</a>
+  <a href="known-limitations.html">Known Limitations</a>
+
+  <div class="section-label">Engineering</div>
+  <a href="cli.html">CLI Reference</a>
+  <a href="tests.html">Test Suite</a>
+  <a href="branding.html">Brand Assets</a>
+</nav>
+<main>
+
+<h1>Atlantia Empire</h1>
+<blockquote>
+  <strong>232+ specialists. One runtime. Constitutional governance.</strong><br>
+  A mapped library of specialist AI agents running natively on the Ruflo multi-agent runtime — not a prompt collection.
+</blockquote>
+
+<h2>What Atlantia Is</h2>
+<p>Atlantia combines a deep library of 251+ specialist AI personas with Ruflo's multi-agent execution runtime — swarm coordination, persistent memory, and cost-aware model routing — instead of asking you to copy-paste prompts between chat sessions.</p>
+<p>It also ships something almost no comparable project does: a benchmark harness that checks whether each persona actually helps, and publishes the result either way.</p>
+
+<h2>What Makes It Different</h2>
+<table>
+<tr><th>Feature</th><th>Atlantia</th><th>Static prompt library</th><th>Generic orchestration</th></tr>
+<tr><td>Domain depth</td><td>✅ 251+ specialists, 16 divisions</td><td>✅ Usually yes</td><td>❌ Almost none</td></tr>
+<tr><td>Execution engine</td><td>✅ Ruflo runtime</td><td>❌ Copy-paste only</td><td>✅ Yes</td></tr>
+<tr><td>Honest benchmarks</td><td>✅ Publishes negative results</td><td>❌ No</td><td>❌ No</td></tr>
+<tr><td>Constitutional governance</td><td>✅ 8-article constitution, RBAC</td><td>❌</td><td>❌</td></tr>
+</table>
+
+<h2>Try It Now (no API key needed)</h2>
+<pre><code>bash bin/atlantia run --demo</code></pre>
+
+<h2>Quick Commands</h2>
+<pre><code>atlantia census              # Current empire state
+atlantia gsp                 # Quality-weighted productivity report
+atlantia run --demo          # Offline walkthrough
+atlantia preflight --plan p  # Constitutional pre-flight check
+atlantia test                # Engineering test suite</code></pre>
+
+<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+</main>
+</div>
+</body>
+</html>

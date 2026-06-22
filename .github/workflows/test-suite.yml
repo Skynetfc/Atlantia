@@ -1,0 +1,43 @@
+name: Engineering Test Suite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Run atlantia test suite
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run full engineering test suite
+        run: |
+          bash atlantia/scripts/run-tests.sh
+        working-directory: ${{ github.workspace }}
+
+      - name: Verify run --demo works offline
+        run: |
+          output=$(bash atlantia/bin/atlantia run --demo 2>&1)
+          if echo "$output" | grep -qi "demo\|navigator\|swarm\|pipeline"; then
+            echo "PASS: atlantia run --demo produces expected output"
+          else
+            echo "FAIL: atlantia run --demo output unexpected"
+            echo "$output" | head -10
+            exit 1
+          fi
+        working-directory: atlantia
+
+      - name: Verify docs build
+        run: |
+          bash scripts/build-docs.sh
+          test -f docs/site/index.html && echo "PASS: docs/site/index.html exists" || exit 1
+        working-directory: atlantia
+
+      - name: Verify census runs
+        run: |
+          bash bin/atlantia census | grep -qi "ATLANTIA\|Census\|Citizens" && echo "PASS" || exit 1
+        working-directory: atlantia

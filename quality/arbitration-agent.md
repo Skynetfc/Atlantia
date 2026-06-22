@@ -1,7 +1,7 @@
 ---
 name: quality-arbitration-agent
 division: quality
-state_name: "Judiciary (Atlantia Prime)"
+state_name: "Judiciary (Atlantia Empire)"
 branch: judicial
 ruflo_type: atlas-quality-arbitration-agent
 model_hint: max
