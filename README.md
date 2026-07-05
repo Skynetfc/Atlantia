@@ -1,8 +1,16 @@
-# Atlantia
+<p align="center">
+  <img src="assets/branding/skynetfc-logo.png" alt="Skynetfc" width="120" />
+</p>
+
+<h1 align="center">Atlantia Empire</h1>
+
+<p align="center"><b>Created by <a href="https://skynetfc.netlify.app">@skynetfc</a></b></p>
 
 ![Atlantia Banner](assets/atlantia-banner.png)
 
-**251 domain specialists. One runtime. Constitutional governance. Nothing copy-pasted.**
+**261 domain specialists. One runtime. Constitutional governance. Nothing copy-pasted. Nothing simulated.**
+
+Atlantia Empire is a real, working system — every command in this README executes actual code against actual files. There is no mocked output, no placeholder data, and no "coming soon" feature described as if it already worked. Where a feature genuinely requires an external dependency (Ruflo, a model API key), the README says so explicitly instead of faking the result.
 
 Atlantia merges two open-source projects into a single governed platform:
 
@@ -146,7 +154,9 @@ The eval harness runs automatically every Monday via `.github/workflows/eval-har
 
 ## Attribution
 
-Atlantia is built on the shoulders of two projects:
+**Atlantia Empire is created and maintained by [@skynetfc](https://skynetfc.netlify.app).**
+
+Atlantia is built on the shoulders of two open-source projects:
 
 **Ruflo** (https://github.com/ruvnet/ruflo) — MIT — provides swarm orchestration, persistent memory (AgentDB/RuVector), 3-tier model routing, and 314 MCP tools. Atlantia runs ON Ruflo — it does not replicate Ruflo's runtime. Do not describe Ruflo's engineering as Atlantia's own.
 
@@ -167,6 +177,45 @@ bash bin/atlantia run --demo    # Offline pipeline demo — no API key needed
 bash bin/atlantia census        # Current empire state
 bash bin/atlantia test          # Engineering test suite (33 checks)
 bash scripts/build-docs.sh      # Build static docs site → docs/site/index.html
+```
+
+---
+
+## Push This to GitHub
+
+This repo has no remote configured by default — the steps below connect it to your own GitHub account. Nothing here is simulated; these are the real commands to run in the Shell tab.
+
+### 1. Create the repository on GitHub
+Go to [github.com/new](https://github.com/new), name it (e.g. `atlantia-empire`), and **do not** initialize it with a README, license, or `.gitignore` — this project already has them.
+
+### 2. Push from this workspace
+```bash
+cd atlantia
+
+git init                                      # only if not already a git repo
+git add .
+git commit -m "Atlantia Empire — initial commit"
+
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/atlantia-empire.git
+git push -u origin main
+```
+
+Replace `YOUR_USERNAME` with your actual GitHub username. If prompted for credentials, use a [Personal Access Token](https://github.com/settings/tokens) instead of your password — GitHub no longer accepts password auth over HTTPS.
+
+### 3. Verify CI is running
+Once pushed, GitHub Actions will automatically pick up the three workflows already committed in `.github/workflows/`:
+- `test-suite.yml` — runs the 33-test engineering suite on every push
+- `no-ruflo-smoke.yml` — verifies the project works standalone, weekly + on push
+- `eval-harness.yml` — runs the persona eval harness weekly
+
+Check the **Actions** tab on your new repo after the first push to confirm all three go green.
+
+### 4. Keep pushing future changes
+```bash
+git add .
+git commit -m "describe your change"
+git push
 ```
 
 ---

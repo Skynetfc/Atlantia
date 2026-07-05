@@ -141,7 +141,7 @@ page() {
 $(nav_html)
 <main>
 ${content}
-<footer>Atlantia Empire &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
+<footer>Atlantia Empire &mdash; created by <a href="https://skynetfc.netlify.app">@skynetfc</a> &mdash; MIT License &mdash; <em>"Mapped, not memorized."</em></footer>
 </main>
 </div>
 </body>
