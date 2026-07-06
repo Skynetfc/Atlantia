@@ -5,3 +5,5 @@
 {"timestamp":"2026-07-06T16:29:23Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
 {"timestamp":"2026-07-06T16:30:09Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
 {"timestamp":"2026-07-06T19:16:21Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
+{"timestamp":"2026-07-06T19:23:36Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
+{"timestamp":"2026-07-06T19:24:40Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
