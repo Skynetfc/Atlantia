@@ -27,15 +27,15 @@
     "constitutional-ai",
     "atlantia"
   ],
-  "author": "Atlantia Contributors",
+  "author": "@skynetfc (https://skynetfc.netlify.app)",
   "license": "MIT",
-  "homepage": "https://github.com/YOUR_ORG/atlantia",
+  "homepage": "https://github.com/YOUR_USERNAME/atlantia-empire",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_ORG/atlantia.git"
+    "url": "https://github.com/YOUR_USERNAME/atlantia-empire.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_ORG/atlantia/issues"
+    "url": "https://github.com/YOUR_USERNAME/atlantia-empire/issues"
   },
   "files": [
     "bin/",
@@ -52,5 +52,6 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "_note": "Ruflo is optional. All persona files remain usable as plain Markdown without Ruflo installed. See README Known Limitations."
+  "_note": "Ruflo is optional. All persona files remain usable as plain Markdown without Ruflo installed. See README Known Limitations.",
+  "_publishStatus": "Not published to npm or PyPI. homepage/repository URLs are placeholders — replace YOUR_USERNAME after you push this to your own GitHub account."
 }
