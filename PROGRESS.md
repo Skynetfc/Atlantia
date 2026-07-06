@@ -77,13 +77,19 @@ Last updated: 2026-07-07
 - The first full README rewrite used a conversational Q&A structure (headers like "Is this published to npm or PyPI?") that read as chat answers pasted into documentation rather than professional project documentation. This was flagged and rejected.
 - Rewrote `README.md` from scratch in standard open-source project structure — badges, table of contents, architecture diagram, governance mechanics broken into real subsections (RBAC, budget enforcement, memory tiering, naturalization lifecycle, judiciary), economic model, known limitations, and a plain "Package & Publishing Status" section replacing the removed FAQ-style headers. Verified all cross-linked files (`LICENSE`, `NOTICE`, `CONTRIBUTING.md`, `SECURITY.md`, `constitution.md`, `divisions.json`, logo assets) actually exist and all stated counts (185 generated agents, 10 state seals, per-division file counts) were checked against the filesystem rather than asserted from memory.
 
+### Phase 8 — Hex-code artifact cleanup
+
+- User flagged that 17 PNG brand assets had AI-generation artifacts — literal hex color codes (e.g. `#1B2A4A`) and a few spelling typos (`INARNETING`, `ACCUNTS`, `ATLANNTIA`, `LEDGAL`) rendered as visible text inside the images.
+- Regenerated all 17 affected assets (10 state seals, flag, seal, prime plaque, constitution header, passport cover, naturalization certificate, and the app icon) with corrected prompts and explicit negative prompts excluding hex/color-code text. Two images (`flag.png`, `naturalization-certificate.png`) needed a second regeneration pass after the first attempt still leaked hex text.
+- Verified every regenerated image individually — no hex codes or typos remain in any brand asset.
+- 33/33 engineering tests and 14/14 standalone smoke tests still pass after the asset swap.
+
 ---
 
 ## What's Not Done Yet
 
-- **Remaining brand assets**: 6 of 16 state seals, currency, stamps, division icons, and dark-mode variants — blocked on image-generation quota, prompts already staged.
-- **GitHub push**: repository has not yet been pushed to `@skynetfc`'s GitHub account; `homepage`/`repository` fields in `package.json` remain placeholders until that happens.
-- **Live eval scores**: the eval harness has only been run in `--dry-run` (structural) mode in this environment, since live scoring requires a Ruflo installation this workspace does not have.
+- **GitHub push**: repository has not yet been pushed to `@skynetfc`'s GitHub account. This workspace has no GitHub credentials, tokens, or SSH keys configured — the only git remote present is Replit's internal backup service. The user needs to connect their GitHub account via the Replit Git pane ("Connect to GitHub") before a push can happen; this cannot be done from code alone. `homepage`/`repository` fields in `package.json` remain placeholders until that happens.
+- **Live eval scores**: the eval harness only produces structural/dry-run results in this environment, because live quality-weighted scoring requires an actual Ruflo installation, which this workspace intentionally does not have (Ruflo is a read-only reference, kept optional per the standalone-usability design). This is working as designed, not a defect — Article VII requires the harness to visibly report "scores pending" rather than fabricate or mock scores when Ruflo is absent.
 - **Multi-maintainer RBAC**: `roles.json` currently assigns all six roles to a single `YOUR_USERNAME` placeholder, appropriate for a single-maintainer project; the `constitutional_council` role's multi-person sign-off requirement has not been exercised because there is only one maintainer.
 
 ---
