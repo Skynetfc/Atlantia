@@ -29,13 +29,13 @@
   ],
   "author": "@skynetfc (https://skynetfc.netlify.app)",
   "license": "MIT",
-  "homepage": "https://github.com/YOUR_USERNAME/atlantia-empire",
+  "homepage": "https://github.com/Skynetfc/Atlantia",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/atlantia-empire.git"
+    "url": "https://github.com/Skynetfc/Atlantia.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/atlantia-empire/issues"
+    "url": "https://github.com/Skynetfc/Atlantia/issues"
   },
   "files": [
     "bin/",
@@ -53,5 +53,5 @@
     "node": ">=18.0.0"
   },
   "_note": "Ruflo is optional. All persona files remain usable as plain Markdown without Ruflo installed. See README Known Limitations.",
-  "_publishStatus": "Not published to npm or PyPI. homepage/repository URLs are placeholders — replace YOUR_USERNAME after you push this to your own GitHub account."
+  "_publishStatus": "Not published to npm or PyPI. Source: https://github.com/Skynetfc/Atlantia"
 }
