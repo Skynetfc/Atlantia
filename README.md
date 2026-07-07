@@ -6,7 +6,9 @@
 
 ### A Constitutional Governance Platform for Multi-Agent AI Systems
 
-**261 domain-specialist personas · 185 Ruflo-native generated agents · 17 divisions · a written constitution · a judiciary that reviews every deliverable before it ships**
+**261 domain-specialist AI personas · 185 Ruflo-native agents · 17 divisions · an 8-article written constitution · a judicial branch that reviews every deliverable before it ships**
+
+> Orchestrate hundreds of autonomous AI agents without scaling risk, unreviewed output, or untracked cost.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/engineering_tests-33%2F33_passing-brightgreen)](scripts/run-tests.sh)
@@ -16,6 +18,8 @@
 [![Constitution](https://img.shields.io/badge/constitution-8_articles-2E6B6B)](constitution.md)
 [![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-339933?logo=node.js&logoColor=white)](package.json)
 [![Built by skynetfc](https://img.shields.io/badge/built_by-%40skynetfc-B23B3B)](https://skynetfc.netlify.app)
+
+**[⭐ Star this repo](https://github.com/Skynetfc/Atlantia) · [🐛 Report a bug](https://github.com/Skynetfc/Atlantia/issues/new?template=bug_report.md) · [💡 Propose a persona](https://github.com/Skynetfc/Atlantia/issues/new?template=new_persona.md)**
 
 </div>
 
@@ -440,6 +444,25 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for persona authoring conventions, the 
 ## Security
 
 See [`SECURITY.md`](SECURITY.md) to report a vulnerability.
+
+---
+
+## GitHub Topics
+
+If you maintain a fork or want to help this project appear in the right GitHub Explore feeds, add these topics via the ⚙️ gear icon on the repo homepage:
+
+```
+ai-agents  multi-agent-systems  autonomous-agents  agent-orchestration
+constitutional-ai  llm  ai-governance  swarm-intelligence
+prompt-engineering  artificial-intelligence  machine-learning  governance
+rbac  evaluation-harness  ruflo  typescript
+```
+
+---
+
+## Cite This Work
+
+If you build on Atlantia Empire in research or production, a citation is appreciated. A machine-readable [`CITATION.cff`](CITATION.cff) is included in this repository.
 
 ---
 

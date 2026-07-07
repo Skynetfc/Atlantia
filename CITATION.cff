@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use Atlantia Empire in your research or build on it, please cite it as below."
+type: software
+title: "Atlantia Empire"
+abstract: >
+  Atlantia Empire is a constitutional governance platform for large multi-agent AI systems.
+  It wraps 261 domain-specialist AI personas in an 8-article written constitution, a standing
+  judicial branch that reviews every deliverable before it ships, role-based access control,
+  budget enforcement, memory tiering, and an evaluation harness — so orchestrating a swarm of
+  AI agents does not also mean scaling risk, unreviewed output, and untracked cost.
+authors:
+  - alias: skynetfc
+    website: "https://skynetfc.netlify.app"
+repository-code: "https://github.com/Skynetfc/Atlantia"
+url: "https://github.com/Skynetfc/Atlantia"
+license: MIT
+keywords:
+  - ai-agents
+  - multi-agent-systems
+  - autonomous-agents
+  - agent-orchestration
+  - constitutional-ai
+  - llm
+  - artificial-intelligence
+  - governance
+  - judiciary
+  - rbac
+  - evaluation-harness
+  - swarm-intelligence
+  - prompt-engineering
+  - ai-governance

@@ -9,3 +9,4 @@
 {"timestamp":"2026-07-06T19:24:40Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
 {"timestamp":"2026-07-06T20:09:11Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
 {"timestamp":"2026-07-06T20:10:47Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
+{"timestamp":"2026-07-07T05:35:23Z","event":"emergency_stop_denied","user":"atlantia-test","reason":"test-run"}
